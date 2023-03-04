@@ -47,6 +47,17 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="room_number">Room number</label>
+                    <input type="text" name="room_number" class="form-control @error('room_number') is-invalid @enderror" id="room_number"
+                           placeholder="Room Number" value="{{ old('room_number') }}">
+                    @error('room_number')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <label for="phone">Contact Number</label>
                     <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror" id="phone"
                            placeholder="Contact Number" value="{{ old('phone') }}">

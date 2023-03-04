@@ -3,24 +3,34 @@
 @section('title', 'Patient Management')
 @section('content-header', 'Patient Management')
 @section('content-actions')
+@if(Auth::user()->roles=='nurse')
     <a href="{{route('customers.create')}}" class="btn btn-success"><i class="fas fa-plus"></i> Add New Patient</a>
-@endsection
+@endif
+@if(Auth::user()->roles=='admin')
+    <a href="{{route('customers.create')}}" class="btn btn-success"><i class="fas fa-plus"></i> Add New Patient</a>
+@endif
+    @endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('plugins/sweetalert2/sweetalert2.min.css') }}">
 @endsection
 @section('content')
+
+<div class="container">
+        <form class="d-flex" action="{{route('customers.index')}}">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+
     <div class="card">
         <div class="card-body">
         <table class="table table-bordered table-hover">
             <thead class="thead-dark">
                 <tr>
-                    <th>ID</th>
-                    <th>Picture</th>
+                    <th>ID Number</th>
                     <th>Name</th>
-                    <th>Email</th>
-                    <th>Contact</th>
-                    <th>Address</th>
-                    <th>Created At</th>
+                    <th>Room Number</th>
+                    <th>Date</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -28,13 +38,8 @@
                 @foreach ($customers as $customer)
                     <tr>
                         <td>{{$customer->id}}</td>
-                        <td>
-                            <img width="40px" class="img-thumbnail" src="{{$customer->getAvatarUrl()}}" alt="">
-                        </td>
                         <td>{{$customer->first_name}} {{$customer->last_name}}</td>
-                        <td>{{$customer->email}}</td>
-                        <td>{{$customer->phone}}</td>
-                        <td>{{$customer->address}}</td>
+                        <td>{{$customer->room_number}}</td>
                         <td>{{$customer->created_at}}</td>
                         <td>
                             <a href="{{ route('customers.edit', $customer) }}" class="btn btn-primary"><i
