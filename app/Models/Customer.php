@@ -21,6 +21,18 @@ class Customer extends Model
         'sex',
         'marital_status',
         'emergency',
+
+        'medicines',
+        'name_of_nurse',
+        'progress_notes',
+        'doctors_order',
+        'remarks',
+        'prepared_by',
+        'medical_history',
+        'medications',
+        'restricted_drugs',
+
+        'doctor_name',
     ];
     public function scopeFilter($query, array $filters)
 {

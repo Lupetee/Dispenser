@@ -31,6 +31,7 @@ class ProductUpdateRequest extends FormRequest
             'barcode' => 'required|string|max:50|unique:products,barcode,' . $product_id,
             'price' => 'required|regex:/^\d+(\.\d{1,2})?$/',
             'quantity' => 'required|integer',
+            'dosage' => 'nullable',
             'status' => 'required|boolean',
         ];
     }

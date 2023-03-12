@@ -6,6 +6,7 @@ import { sum } from "lodash";
 
 class Cart extends Component {
     constructor(props) {
+
         super(props);
         this.state = {
             cart: [],
@@ -13,7 +14,14 @@ class Cart extends Component {
             customers: [],
             barcode: "",
             search: "",
-            customer_id: ""
+            customer_id: "",
+            patient: {
+                name: "Walk-in",
+                bed_number: "N/A",
+                doctor: "N/A",
+                nurse: "N/A",
+                date: new Date().toISOString().split("T")[0],
+            },
         };
 
         this.loadCart = this.loadCart.bind(this);
@@ -53,7 +61,6 @@ class Cart extends Component {
 
     handleOnChangeBarcode(event) {
         const barcode = event.target.value;
-        console.log(barcode);
         this.setState({ barcode });
     }
 
@@ -158,7 +165,6 @@ class Cart extends Component {
                 .post("/admin/cart", { barcode })
                 .then(res => {
                     // this.loadCart();
-                    console.log(res);
                 })
                 .catch(err => {
                     Swal.fire("Error!", err.response.data.message, "error");
@@ -167,7 +173,23 @@ class Cart extends Component {
     }
 
     setCustomerId(event) {
-        this.setState({ customer_id: event.target.value });
+        const selectedPatient = this.state.customers.find((cus) => {
+            return cus.id == parseInt(event.target.value);
+        });
+
+        this.setState({
+            customer_id: event.target.value,
+            patient: {
+                name:
+                    selectedPatient.first_name +
+                    " " +
+                    selectedPatient.last_name,
+                bed_number: selectedPatient.room_number,
+                doctor: selectedPatient.doctor_name,
+                nurse: selectedPatient.name_of_nurse,
+                date: new Date().toISOString().split("T")[0],
+            },
+        });
     }
     handleClickSubmit() {
         Swal.fire({
@@ -188,13 +210,19 @@ class Cart extends Component {
             allowOutsideClick: () => !Swal.isLoading()
         }).then((result) => {
             if (result.value) {
-                //
+                this.state.patient = {
+                    name: "Walk-in",
+                    bed_number: "N/A",
+                    doctor: "N/A",
+                    nurse: "N/A",
+                    date: new Date().toISOString().split("T")[0],
+                };
             }
         })
 
     }
     render() {
-        const { cart, products, customers, barcode } = this.state;
+        const { cart, products, customers, barcode, patient } = this.state;
         return (
             <div className="row">
                 <div className="col-md-6 col-lg-4">
@@ -215,8 +243,8 @@ class Cart extends Component {
                                 className="form-control"
                                 onChange={this.setCustomerId}
                             >
-                                <option value="">Walking Customer</option>
-                                {customers.map(cus => (
+                                <option value="">Walk-in Customer</option>
+                                {customers.map((cus) => (
                                     <option
                                         key={cus.id}
                                         value={cus.id}
@@ -226,17 +254,43 @@ class Cart extends Component {
                         </div>
                     </div>
                     <div className="user-cart">
-                        <div className="card">
+                        <div
+                            className="card"
+                            style={{ minHeight: "600px", overflowY: "scroll" }}
+                        >
+                            <table className="table ">
+                                <tr>
+                                    <td>Patient Name:</td>
+                                    <td>{patient.name}</td>
+                                </tr>
+                                <tr>
+                                    <td>Bed#:</td>
+                                    <td>{patient.bed_number}</td>
+                                </tr>
+                                <tr>
+                                    <td>Doctor's Name:</td>
+                                    <td>{patient.doctor}</td>
+                                </tr>
+                                <tr>
+                                    <td>Nurse:</td>
+                                    <td>{patient.nurse}</td>
+                                </tr>
+                                <tr>
+                                    <td>Date:</td>
+                                    <td>{patient.date}</td>
+                                </tr>
+                            </table>
                             <table className="table table-striped">
                                 <thead>
                                     <tr>
                                         <th>Product</th>
                                         <th>Quantity</th>
+                                        <th>Dosage</th>
                                         <th className="text-right">Price</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {cart.map(c => (
+                                    {cart.map((c) => (
                                         <tr key={c.id}>
                                             <td>{c.name}</td>
                                             <td>
@@ -244,7 +298,7 @@ class Cart extends Component {
                                                     type="text"
                                                     className="form-control form-control-sm qty"
                                                     value={c.pivot.quantity}
-                                                    onChange={event =>
+                                                    onChange={(event) =>
                                                         this.handleChangeQty(
                                                             c.id,
                                                             event.target.value
@@ -262,6 +316,7 @@ class Cart extends Component {
                                                     <i className="fas fa-trash"></i>
                                                 </button>
                                             </td>
+                                            <td>{c.dosage}</td>
                                             <td className="text-right">
                                                 {window.APP.currency_symbol}{" "}
                                                 {(
@@ -315,14 +370,26 @@ class Cart extends Component {
                         />
                     </div>
                     <div className="order-product">
-                        {products.map(p => (
+                        {products.map((p) => (
                             <div
                                 onClick={() => this.addProductToCart(p.barcode)}
                                 key={p.id}
                                 className="item"
                             >
-                                <img src={p.image_url} class="rounded mx-auto d-block" alt="" />
-                                <h5 style={window.APP.warning_quantity > p.quantity ? { color: 'red' } : {}}>{p.name}({p.quantity})</h5>
+                                <img
+                                    src={p.image_url}
+                                    class="rounded mx-auto d-block"
+                                    alt=""
+                                />
+                                <h5
+                                    style={
+                                        window.APP.warning_quantity > p.quantity
+                                            ? { color: "red" }
+                                            : {}
+                                    }
+                                >
+                                    {p.name}({p.quantity})
+                                </h5>
                             </div>
                         ))}
                     </div>

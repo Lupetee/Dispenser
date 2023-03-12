@@ -20,7 +20,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
     Route::post('/settings', [SettingController::class, 'store'])->name('settings.store');
     Route::resource('products', ProductController::class);
+
     Route::resource('customers', CustomerController::class);
+
     Route::resource('orders', OrderController::class);
 
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');

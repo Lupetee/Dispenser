@@ -25,6 +25,7 @@ class ProductResource extends JsonResource
             'quantity' => $this->quantity,
             'status' => $this->status,
             'created_at' => $this->created_at,
+            'dosage' => $this->dosage,
             'image_url' => Storage::url($this->image)
         ];
     }

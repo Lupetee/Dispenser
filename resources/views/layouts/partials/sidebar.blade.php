@@ -35,6 +35,7 @@
                         <p>Products</p>
                     </a>
                 </li>
+
                 <li class="nav-item has-treeview">
                     <a href="{{ route('customers.index') }}" class="nav-link {{ activeSegment('customers') }}">
                         <i class="nav-icon fas fa-users"></i>
@@ -80,12 +81,7 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="nav-item has-treeview">
-                    <a href="{{ route('products.index') }}" class="nav-link {{ activeSegment('products') }}">
-                        <i class="nav-icon fas fa-boxes"></i>
-                        <p>Products</p>
-                    </a>
-                </li>
+
                 <li class="nav-item has-treeview">
                     <a href="{{ route('customers.index') }}" class="nav-link {{ activeSegment('customers') }}">
                         <i class="nav-icon fas fa-users"></i>
@@ -98,12 +94,19 @@
                         <p>Place Order</p>
                     </a>
                 </li>
-                <li class="nav-item has-treeview">
-                    <a href="{{ route('settings.index') }}" class="nav-link {{ activeSegment('settings') }}">
-                        <i class="nav-icon fas fa-cogs"></i>
-                        <p>Settings</p>
+                 <li class="nav-item has-treeview">
+                    <a href="{{ route('orders.index') }}" class="nav-link {{ activeSegment('orders') }}">
+                        <i class="nav-icon fas fa-chart-line"></i>
+                        <p>Order History</p>
                     </a>
                 </li>
+                 <li class="nav-item has-treeview">
+                    <a href="{{ route('orders.index') }}" class="nav-link {{ activeSegment('orders') }}">
+                        <i class="nav-icon fas fa-chart-line"></i>
+                        <p>Medical History (pending)</p>
+                    </a>
+                </li>
+
                 <li class="nav-item">
                     <a href="#" class="nav-link" onclick="document.getElementById('logout-form').submit()">
                         <i class="nav-icon fas fa-power-off"></i>
@@ -115,7 +118,7 @@
                 </li>
             </ul>
         </nav>
-    
+
     @endif
     @if(Auth::user()->roles=='pharmacy')
         <nav class="mt-2">
