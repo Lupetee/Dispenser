@@ -3,85 +3,112 @@
 @section('title', 'Orders List')
 @section('content-header', 'Order List')
 @section('content-actions')
-@if(Auth::user()->roles=='admin')
-    <a href="{{route('cart.index')}}" class="btn btn-success">Place Order</a>
+    @if (Auth::user()->roles == 'admin')
+        <a href="{{ route('cart.index') }}" class="btn btn-success">Place Order</a>
     @endif
-    @if(Auth::user()->roles=='nurse')
-    <a href="{{route('cart.index')}}" class="btn btn-success">Place Order</a>
+    @if (Auth::user()->roles == 'nurse')
+        <a href="{{ route('cart.index') }}" class="btn btn-success">Place Order</a>
     @endif
 @endsection
 
 @section('content')
-<div class="card"><!-- -->
-    <div class="card-body">
-        <div class="row">
-            <!-- <div class="col-md-3"></div> -->
-            <div class="col-md-12">
-                <form action="{{route('orders.index')}}">
-                    <div class="row">
-                        <div class="col-md-5">
-                            <input type="date" name="start_date" class="form-control" value="{{request('start_date')}}" />
+    <div class="card">
+        <!-- -->
+        <div class="card-body">
+            <div class="row">
+                <!-- <div class="col-md-3"></div> -->
+                <div class="col-md-12">
+                    <form action="{{ route('orders.index') }}">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <input type="date" name="start_date" class="form-control"
+                                    value="{{ request('start_date') }}" />
+                            </div>
+                            <div class="col-md-5">
+                                <input type="date" name="end_date" class="form-control"
+                                    value="{{ request('end_date') }}" />
+                            </div>
+                            <div class="col-md-2">
+                                <button class="btn btn-primary" type="submit"><i class="fas fa-filter"></i> Filter</button>
+                            </div>
                         </div>
-                        <div class="col-md-5">
-                            <input type="date" name="end_date" class="form-control" value="{{request('end_date')}}" />
-                        </div>
-                        <div class="col-md-2">
-                            <button class="btn btn-primary" type="submit"><i class="fas fa-filter"></i> Filter</button>
-                        </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
-        <hr>
-        <table class="table table-bordered table-hover">
-            <thead class="thead-dark">
-                <tr>
-                    <th>ID</th>
-                    <th>Customer</th>
-                    <th>Total</th>
-                    <th>Received</th>
-                    <th>Status</th>
-                    <th>Remain.</th>
-                    <th>Created At</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($orders as $order)
-                <tr>
-                    <td>{{$order->id}}</td>
-                    <td>{{$order->getCustomerName()}}</td>
-                    <td>{{ config('settings.currency_symbol') }} {{$order->formattedTotal()}}</td>
-                    <td>{{ config('settings.currency_symbol') }} {{$order->formattedReceivedAmount()}}</td>
-                    <td>
-                        @if($order->receivedAmount() == 0)
-                            <span class="badge badge-danger">Not Paid</span>
-                        @elseif($order->receivedAmount() < $order->total())
-                            <span class="badge badge-warning">Partial</span>
-                        @elseif($order->receivedAmount() == $order->total())
-                            <span class="badge badge-success">Paid</span>
-                        @elseif($order->receivedAmount() > $order->total())
-                            <span class="badge badge-info">Change</span>
+            <hr>
+            <table class="table table-bordered table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Customer</th>
+                        <th>Nurse on Duty</th>
+                        @if (auth()->user()->roles == 'pharmacy')
+                            <th>Total</th>
                         @endif
-                    </td>
-                    <td>{{config('settings.currency_symbol')}} {{number_format($order->total() - $order->receivedAmount(), 2)}}</td>
-                    <td>{{$order->created_at}}</td>
-                </tr>
-                @endforeach
-            </tbody>
-            <tfoot><!-- -->
-                <tr>
-                    <th></th>
-                    <th></th>
-                    <th>{{ config('settings.currency_symbol') }} {{ number_format($total, 2) }}</th>
-                    <th>{{ config('settings.currency_symbol') }} {{ number_format($receivedAmount, 2) }}</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </tfoot>
-        </table>
-        {{ $orders->render() }}
-    </div>
-</div><!-- -->
-@endsection
+                        @if (auth()->user()->roles == 'pharmacy')
+                            <th>Received</th>
+                        @endif
+                        <th>Status</th>
+                        @if (auth()->user()->roles == 'pharmacy')
+                            <th>Remain.</th>
+                        @endif
+                        <th>Created At</th>
+                    </tr>
+                </thead>
+                {{-- nurse
 
+                ID #, Patient's Name, Nurse On-Duty, Created, Status(tatanggalin yung total at received)
+
+                --}}
+                <tbody>
+                    @foreach ($orders as $order)
+                        <tr>
+                            <td>{{ $order->id }}</td>
+                            <td><a target="_blank" href="{{route('order.viewReceipt', $order->id)}}">{{ $order->getCustomerName() }}</a></td>
+                            <td>{{ $order->customer->name_of_nurse }}</td>
+                            @if (auth()->user()->roles == 'pharmacy')
+                                <td>{{ config('settings.currency_symbol') }} {{ $order->formattedTotal() }}</td>
+                            @endif
+                            @if (auth()->user()->roles == 'pharmacy')
+                                <td>{{ config('settings.currency_symbol') }} {{ $order->formattedReceivedAmount() }}</td>
+                            @endif
+                            <td>
+                                @if ($order->receivedAmount() == 0)
+                                    <span class="badge badge-danger">Not Paid</span>
+                                @elseif($order->receivedAmount() < $order->total())
+                                    <span class="badge badge-warning">Partial</span>
+                                @elseif($order->receivedAmount() == $order->total())
+                                    <span class="badge badge-success">Paid</span>
+                                @elseif($order->receivedAmount() > $order->total())
+                                    <span class="badge badge-info">Change</span>
+                                @endif
+                            </td>
+                            @if (auth()->user()->roles == 'pharmacy')
+                                <td>{{ config('settings.currency_symbol') }}
+                                    {{ number_format($order->total() - $order->receivedAmount(), 2) }}
+                                </td>
+                            @endif
+                            <td>{{ $order->created_at }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+                @if (auth()->user()->roles == 'pharmacy')
+                    <tfoot>
+                        <!-- -->
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th>{{ config('settings.currency_symbol') }} {{ number_format($total, 2) }}</th>
+                            <th>{{ config('settings.currency_symbol') }} {{ number_format($receivedAmount, 2) }}</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                @endif
+
+            </table>
+            {{ $orders->render() }}
+        </div>
+    </div><!-- -->
+@endsection

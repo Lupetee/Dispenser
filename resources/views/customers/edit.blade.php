@@ -87,7 +87,32 @@
                         </span>
                     @enderror
                 </div>
+
+                <div class="form-group">
+                    <label for="avatar">is this patient discharged?</label>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" value="1" name="is_discharged"
+                                {{ $customer->is_discharged ? 'checked' : '' }}>Yes
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" value="0" name="is_discharged"
+                                {{ !$customer->is_discharged ? 'checked' : '' }}>No
+                        </label>
+                    </div>
+                </div>
+                @error('avatar')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </div>
+
+
+
         </div>
         <div class="card">
             <div class="card-body">
@@ -129,7 +154,8 @@
 
                 <div class="form-group">
                     <label for="medicines">Progress Notes</label>
-                    <textarea name="progress_notes" class="form-control @error('progress_notes') is-invalid @enderror" id="progress_notes"> {{ old('progress_notes', $customer->progress_notes) }} </textarea>
+                    <textarea name="progress_notes" class="form-control @error('progress_notes') is-invalid @enderror"
+                        id="progress_notes"> {{ old('progress_notes', $customer->progress_notes) }} </textarea>
                     @error('progress_notes')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -178,7 +204,8 @@
 
                 <div class="form-group">
                     <label for="medical_history">Medical History</label>
-                    <textarea name="medical_history" class="form-control @error('medical_history') is-invalid @enderror" id="medical_history"> {{ old('medical_history', $customer->medical_history) }} </textarea>
+                    <textarea name="medical_history" class="form-control @error('medical_history') is-invalid @enderror"
+                        id="medical_history"> {{ old('medical_history', $customer->medical_history) }} </textarea>
                     @error('medical_history')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -196,7 +223,8 @@
                 </div>
                 <div class="form-group">
                     <label for="restricted_drugs">Restricted Drugs</label>
-                    <textarea name="restricted_drugs" class="form-control @error('restricted_drugs') is-invalid @enderror" id="restricted_drugs"> {{ old('restricted_drugs', $customer->restricted_drugs) }} </textarea>
+                    <textarea name="restricted_drugs" class="form-control @error('restricted_drugs') is-invalid @enderror"
+                        id="restricted_drugs"> {{ old('restricted_drugs', $customer->restricted_drugs) }} </textarea>
                     @error('restricted_drugs')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

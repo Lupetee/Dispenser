@@ -101,9 +101,9 @@
                     </a>
                 </li>
                  <li class="nav-item has-treeview">
-                    <a href="{{ route('orders.index') }}" class="nav-link {{ activeSegment('orders') }}">
+                    <a href="{{ route('medical-history.index') }}" class="nav-link {{ activeSegment('orders') }}">
                         <i class="nav-icon fas fa-chart-line"></i>
-                        <p>Medical History (pending)</p>
+                        <p>Medical History </p>
                     </a>
                 </li>
 

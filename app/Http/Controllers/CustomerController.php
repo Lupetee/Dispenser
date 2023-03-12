@@ -40,6 +40,33 @@ class CustomerController extends Controller
         ]);
     }
 
+
+    public function getDischarged()
+    {
+
+        if (request()->wantsJson()) {
+            return response(
+                Customer::where('is_discharged', 1)->get()
+            );
+        }
+        $customers = Customer::where('is_discharged', 1)
+        // ->where(function ($query) use ($request) {
+        //     $query->when(!empty($request->query('query')), function ($query) use ($request) {
+        //         $queryString = $request->query('query');
+
+        //         $query->where('first_name', 'like', '%' . $queryString . '%')
+        //             ->orWhere('id', 'like', '%' . $queryString . '%')
+        //             ->orWhere('last_name', 'like', '%' . $queryString . '%')
+        //             ->orWhere('room_number', 'like', '%' . $queryString . '%')
+        //             ->orWhere('created_at', 'like', '%' . $queryString . '%');
+        //     });
+        // })
+        ->latest()->paginate(10);
+        return view('medical-history.index')->with([
+            'customers' => $customers,
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -128,6 +155,7 @@ class CustomerController extends Controller
         $customer->restricted_drugs = $request->restricted_drugs;
 
         $customer->doctor_name = $request->doctor_name;
+        $customer->is_discharged = $request->is_discharged;
 
         if ($request->hasFile('avatar')) {
             // Delete old avatar

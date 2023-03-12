@@ -24,6 +24,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('customers', CustomerController::class);
 
     Route::resource('orders', OrderController::class);
+    Route::get('order-receipt/{order}', [OrderController::class, 'viewReceipt'])->name('order.viewReceipt');
+    Route::get('medical-history', [CustomerController::class, 'getDischarged'])->name('medical-history.index');
 
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
     Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
