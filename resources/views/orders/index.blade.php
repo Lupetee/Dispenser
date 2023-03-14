@@ -36,6 +36,36 @@
                 </div>
             </div>
             <hr>
+
+            @if (auth()->user()->roles == 'pharmacy')
+            @endif
+
+            <div class="container-fluid m-0 p-0">
+                <form action="{{ route('orders.index') }}" method="GET">
+                                            <p>
+                        Station Numbers
+                        </p>
+                    <div class="d-flex w-100">
+
+                        <select name="station" class="custom-select">
+                            <option @if (empty($station) || $station == '1') selected="selected" @endif value="1">One</option>
+                            <option @if ($station == '2') selected="selected" @endif value="2">Two</option>
+                            <option @if ($station == '3') selected="selected" @endif value="3">Three
+                            </option>
+                            <option @if ($station == '4') selected="selected" @endif value="4">Four
+                            </option>
+                            <option @if ($station == '5') selected="selected" @endif value="5">Five
+                            </option>
+                            <option @if ($station == '6') selected="selected" @endif value="6">Six
+                            </option>
+                        </select>
+
+                        <input class="btn btn-outline-success" type="submit"Search />
+                    </div>
+                </form>
+            </div>
+
+
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">
                     <tr>
@@ -56,17 +86,23 @@
                         <th>Order Completed</th>
                     </tr>
                 </thead>
-                {{-- nurse
 
-                ID #, Patient's Name, Nurse On-Duty, Created, Status(tatanggalin yung total at received)
 
-                --}}
+
                 <tbody>
                     @foreach ($orders as $order)
                         <tr>
                             <td>{{ $order->id }}</td>
-                            <td><a target="_blank" href="{{route('order.viewReceipt', $order->id)}}">{{ $order->getCustomerName() }}</a></td>
-                            <td>{{ $order->customer->name_of_nurse }}</td>
+                            <td>
+                                @if ($order->customer)
+                                    <a target="_blank" href="{{ route('order.viewReceipt', $order->id) }}">
+                                        {{ $order->getCustomerName() }}
+                                    </a>
+                                @else
+                                    Walk-in Customer
+                                @endif
+                            </td>
+                            <td>{{ $order->customer->name_of_nurse ?? 'N\A' }}</td>
                             {{-- @if (auth()->user()->roles == 'pharmacy')
                                 <td>{{ config('settings.currency_symbol') }} {{ $order->formattedTotal() }}</td>
                             @endif

@@ -17506,6 +17506,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -17554,10 +17558,20 @@ var Cart = /*#__PURE__*/function (_Component) {
         doctor: "N/A",
         nurse: "N/A",
         date: new Date().toISOString().split("T")[0]
-      }
+      },
+      stations: {
+        one: 1,
+        two: 2,
+        three: 3,
+        four: 4,
+        five: 5,
+        six: 6
+      },
+      station_id: 1
     };
     _this.loadCart = _this.loadCart.bind(_assertThisInitialized(_this));
     _this.handleOnChangeBarcode = _this.handleOnChangeBarcode.bind(_assertThisInitialized(_this));
+    _this.handleOnChangeStation = _this.handleOnChangeStation.bind(_assertThisInitialized(_this));
     _this.handleScanBarcode = _this.handleScanBarcode.bind(_assertThisInitialized(_this));
     _this.handleChangeQty = _this.handleChangeQty.bind(_assertThisInitialized(_this));
     _this.handleEmptyCart = _this.handleEmptyCart.bind(_assertThisInitialized(_this));
@@ -17606,6 +17620,14 @@ var Cart = /*#__PURE__*/function (_Component) {
       var barcode = event.target.value;
       this.setState({
         barcode: barcode
+      });
+    }
+  }, {
+    key: "handleOnChangeStation",
+    value: function handleOnChangeStation(event) {
+      var station = event.target.value;
+      this.setState({
+        station_id: station
       });
     }
   }, {
@@ -17774,15 +17796,16 @@ var Cart = /*#__PURE__*/function (_Component) {
     value: function handleClickSubmit() {
       var _this8 = this;
       sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
-        title: 'Received Amount',
-        input: 'text',
+        title: "Received Amount",
+        input: "text",
         inputValue: this.getTotal(this.state.cart),
         showCancelButton: true,
-        confirmButtonText: 'Send',
+        confirmButtonText: "Send",
         showLoaderOnConfirm: true,
         preConfirm: function preConfirm(amount) {
-          return axios__WEBPACK_IMPORTED_MODULE_2___default().post('/admin/orders', {
+          return axios__WEBPACK_IMPORTED_MODULE_2___default().post("/admin/orders", {
             customer_id: _this8.state.customer_id,
+            station_id: _this8.state.station_id,
             amount: amount
           }).then(function (res) {
             _this8.loadCart();
@@ -17815,7 +17838,9 @@ var Cart = /*#__PURE__*/function (_Component) {
         products = _this$state.products,
         customers = _this$state.customers,
         barcode = _this$state.barcode,
-        patient = _this$state.patient;
+        patient = _this$state.patient,
+        stations = _this$state.stations,
+        station_id = _this$state.station_id;
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "row",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
@@ -17889,6 +17914,25 @@ var Cart = /*#__PURE__*/function (_Component) {
                     children: "Date:"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
                     children: patient.date
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("tr", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
+                    children: "Select Station"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("select", {
+                      className: "custom-select",
+                      onChange: this.handleOnChangeStation,
+                      children: Object.entries(stations).map(function (_ref, index) {
+                        var _ref2 = _slicedToArray(_ref, 2),
+                          name = _ref2[0],
+                          value = _ref2[1];
+                        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
+                          value: value,
+                          selected: value === station_id,
+                          children: name
+                        }, index);
+                      })
+                    })
                   })]
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("table", {

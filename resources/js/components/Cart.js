@@ -6,7 +6,6 @@ import { sum } from "lodash";
 
 class Cart extends Component {
     constructor(props) {
-
         super(props);
         this.state = {
             cart: [],
@@ -22,10 +21,20 @@ class Cart extends Component {
                 nurse: "N/A",
                 date: new Date().toISOString().split("T")[0],
             },
+            stations: {
+                one: 1,
+                two: 2,
+                three: 3,
+                four: 4,
+                five: 5,
+                six: 6,
+            },
+            station_id: 1,
         };
 
         this.loadCart = this.loadCart.bind(this);
         this.handleOnChangeBarcode = this.handleOnChangeBarcode.bind(this);
+        this.handleOnChangeStation = this.handleOnChangeStation.bind(this);
         this.handleScanBarcode = this.handleScanBarcode.bind(this);
         this.handleChangeQty = this.handleChangeQty.bind(this);
         this.handleEmptyCart = this.handleEmptyCart.bind(this);
@@ -34,7 +43,7 @@ class Cart extends Component {
         this.handleChangeSearch = this.handleChangeSearch.bind(this);
         this.handleSeach = this.handleSeach.bind(this);
         this.setCustomerId = this.setCustomerId.bind(this);
-        this.handleClickSubmit = this.handleClickSubmit.bind(this)
+        this.handleClickSubmit = this.handleClickSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -45,7 +54,7 @@ class Cart extends Component {
     }
 
     loadCustomers() {
-        axios.get(`/admin/customers`).then(res => {
+        axios.get(`/admin/customers`).then((res) => {
             const customers = res.data;
             this.setState({ customers });
         });
@@ -53,7 +62,7 @@ class Cart extends Component {
 
     loadProducts(search = "") {
         const query = !!search ? `?search=${search}` : "";
-        axios.get(`/admin/products${query}`).then(res => {
+        axios.get(`/admin/products${query}`).then((res) => {
             const products = res.data.data;
             this.setState({ products });
         });
@@ -63,9 +72,13 @@ class Cart extends Component {
         const barcode = event.target.value;
         this.setState({ barcode });
     }
+    handleOnChangeStation(event) {
+        const station = event.target.value;
+        this.setState({ station_id: station });
+    }
 
     loadCart() {
-        axios.get("/admin/cart").then(res => {
+        axios.get("/admin/cart").then((res) => {
             const cart = res.data;
             this.setState({ cart });
         });
@@ -77,17 +90,17 @@ class Cart extends Component {
         if (!!barcode) {
             axios
                 .post("/admin/cart", { barcode })
-                .then(res => {
+                .then((res) => {
                     this.loadCart();
                     this.setState({ barcode: "" });
                 })
-                .catch(err => {
+                .catch((err) => {
                     Swal.fire("Error!", err.response.data.message, "error");
                 });
         }
     }
     handleChangeQty(product_id, qty) {
-        const cart = this.state.cart.map(c => {
+        const cart = this.state.cart.map((c) => {
             if (c.id === product_id) {
                 c.pivot.quantity = qty;
             }
@@ -98,26 +111,26 @@ class Cart extends Component {
 
         axios
             .post("/admin/cart/change-qty", { product_id, quantity: qty })
-            .then(res => { })
-            .catch(err => {
+            .then((res) => {})
+            .catch((err) => {
                 Swal.fire("Error!", err.response.data.message, "error");
             });
     }
 
     getTotal(cart) {
-        const total = cart.map(c => c.pivot.quantity * c.price);
+        const total = cart.map((c) => c.pivot.quantity * c.price);
         return sum(total).toFixed(2);
     }
     handleClickDelete(product_id) {
         axios
             .post("/admin/cart/delete", { product_id, _method: "DELETE" })
-            .then(res => {
-                const cart = this.state.cart.filter(c => c.id !== product_id);
+            .then((res) => {
+                const cart = this.state.cart.filter((c) => c.id !== product_id);
                 this.setState({ cart });
             });
     }
     handleEmptyCart() {
-        axios.post("/admin/cart/empty", { _method: "DELETE" }).then(res => {
+        axios.post("/admin/cart/empty", { _method: "DELETE" }).then((res) => {
             this.setState({ cart: [] });
         });
     }
@@ -132,19 +145,22 @@ class Cart extends Component {
     }
 
     addProductToCart(barcode) {
-        let product = this.state.products.find(p => p.barcode === barcode);
+        let product = this.state.products.find((p) => p.barcode === barcode);
         if (!!product) {
             // if product is already in cart
-            let cart = this.state.cart.find(c => c.id === product.id);
+            let cart = this.state.cart.find((c) => c.id === product.id);
             if (!!cart) {
                 // update quantity
                 this.setState({
-                    cart: this.state.cart.map(c => {
-                        if (c.id === product.id && product.quantity > c.pivot.quantity) {
+                    cart: this.state.cart.map((c) => {
+                        if (
+                            c.id === product.id &&
+                            product.quantity > c.pivot.quantity
+                        ) {
                             c.pivot.quantity = c.pivot.quantity + 1;
                         }
                         return c;
-                    })
+                    }),
                 });
             } else {
                 if (product.quantity > 0) {
@@ -153,8 +169,8 @@ class Cart extends Component {
                         pivot: {
                             quantity: 1,
                             product_id: product.id,
-                            user_id: 1
-                        }
+                            user_id: 1,
+                        },
                     };
 
                     this.setState({ cart: [...this.state.cart, product] });
@@ -163,10 +179,10 @@ class Cart extends Component {
 
             axios
                 .post("/admin/cart", { barcode })
-                .then(res => {
+                .then((res) => {
                     // this.loadCart();
                 })
-                .catch(err => {
+                .catch((err) => {
                     Swal.fire("Error!", err.response.data.message, "error");
                 });
         }
@@ -193,21 +209,28 @@ class Cart extends Component {
     }
     handleClickSubmit() {
         Swal.fire({
-            title: 'Received Amount',
-            input: 'text',
+            title: "Received Amount",
+            input: "text",
             inputValue: this.getTotal(this.state.cart),
             showCancelButton: true,
-            confirmButtonText: 'Send',
+            confirmButtonText: "Send",
             showLoaderOnConfirm: true,
             preConfirm: (amount) => {
-                return axios.post('/admin/orders', { customer_id: this.state.customer_id, amount }).then(res => {
-                    this.loadCart();
-                    return res.data;
-                }).catch(err => {
-                    Swal.showValidationMessage(err.response.data.message)
-                })
+                return axios
+                    .post("/admin/orders", {
+                        customer_id: this.state.customer_id,
+                        station_id: this.state.station_id,
+                        amount,
+                    })
+                    .then((res) => {
+                        this.loadCart();
+                        return res.data;
+                    })
+                    .catch((err) => {
+                        Swal.showValidationMessage(err.response.data.message);
+                    });
             },
-            allowOutsideClick: () => !Swal.isLoading()
+            allowOutsideClick: () => !Swal.isLoading(),
         }).then((result) => {
             if (result.value) {
                 this.state.patient = {
@@ -218,11 +241,18 @@ class Cart extends Component {
                     date: new Date().toISOString().split("T")[0],
                 };
             }
-        })
-
+        });
     }
     render() {
-        const { cart, products, customers, barcode, patient } = this.state;
+        const {
+            cart,
+            products,
+            customers,
+            barcode,
+            patient,
+            stations,
+            station_id,
+        } = this.state;
         return (
             <div className="row">
                 <div className="col-md-6 col-lg-4">
@@ -278,6 +308,31 @@ class Cart extends Component {
                                 <tr>
                                     <td>Date:</td>
                                     <td>{patient.date}</td>
+                                </tr>
+                                <tr>
+                                    <td>Select Station</td>
+                                    <td>
+                                        <select
+                                            className="custom-select"
+                                            onChange={
+                                                this.handleOnChangeStation
+                                            }
+                                        >
+                                            {Object.entries(stations).map(
+                                                ([name, value], index) => (
+                                                    <option
+                                                        key={index}
+                                                        value={value}
+                                                        selected={
+                                                            value === station_id
+                                                        }
+                                                    >
+                                                        {name}
+                                                    </option>
+                                                )
+                                            )}
+                                        </select>
+                                    </td>
                                 </tr>
                             </table>
                             <table className="table table-striped">
