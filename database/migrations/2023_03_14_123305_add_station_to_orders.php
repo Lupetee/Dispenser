@@ -13,10 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('products', function (Blueprint $table) {
-            if (!Schema::hasColumn('products', 'dosage')) {
-                $table->string('dosage')->nullable();
-            }
+        Schema::table('orders', function (Blueprint $table) {
+            $table->integer('station_id')->default(1);
         });
     }
 
@@ -27,10 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('products', function (Blueprint $table) {
-            if (!Schema::hasColumn('products', 'dosage')) {
-                $table->dropColumn('dosage');
-            }
+        Schema::table('orders', function (Blueprint $table) {
+            $table->dropColumn('station_id');
         });
     }
 };

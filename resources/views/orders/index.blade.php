@@ -40,9 +40,9 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>ID</th>
-                        <th>Customer</th>
-                        <th>Nurse on Duty</th>
-                        @if (auth()->user()->roles == 'pharmacy')
+                        <th>Patient</th>
+                        <th>Nurse on-Duty</th>
+                        {{-- @if (auth()->user()->roles == 'pharmacy')
                             <th>Total</th>
                         @endif
                         @if (auth()->user()->roles == 'pharmacy')
@@ -51,8 +51,9 @@
                         <th>Status</th>
                         @if (auth()->user()->roles == 'pharmacy')
                             <th>Remain.</th>
-                        @endif
-                        <th>Created At</th>
+                        @endif --}}
+                        <th>Order Placed</th>
+                        <th>Order Completed</th>
                     </tr>
                 </thead>
                 {{-- nurse
@@ -66,7 +67,7 @@
                             <td>{{ $order->id }}</td>
                             <td><a target="_blank" href="{{route('order.viewReceipt', $order->id)}}">{{ $order->getCustomerName() }}</a></td>
                             <td>{{ $order->customer->name_of_nurse }}</td>
-                            @if (auth()->user()->roles == 'pharmacy')
+                            {{-- @if (auth()->user()->roles == 'pharmacy')
                                 <td>{{ config('settings.currency_symbol') }} {{ $order->formattedTotal() }}</td>
                             @endif
                             @if (auth()->user()->roles == 'pharmacy')
@@ -87,12 +88,13 @@
                                 <td>{{ config('settings.currency_symbol') }}
                                     {{ number_format($order->total() - $order->receivedAmount(), 2) }}
                                 </td>
-                            @endif
+                            @endif --}}
                             <td>{{ $order->created_at }}</td>
+                            <td>{{ $order->updated_at }}</td>
                         </tr>
                     @endforeach
                 </tbody>
-                @if (auth()->user()->roles == 'pharmacy')
+                {{-- @if (auth()->user()->roles == 'pharmacy')
                     <tfoot>
                         <!-- -->
                         <tr>
@@ -105,7 +107,7 @@
                             <th></th>
                         </tr>
                     </tfoot>
-                @endif
+                @endif --}}
 
             </table>
             {{ $orders->render() }}
