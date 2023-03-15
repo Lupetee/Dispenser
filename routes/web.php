@@ -13,6 +13,9 @@ Route::get('/', function () {
     return redirect('/admin');
 });
 
+Route::get('order-count', [OrderController::class, 'getOrderCount'])->name('orders.getCount');
+
+
 Auth::routes();
 
 Route::prefix('admin')->middleware('auth')->group(function () {

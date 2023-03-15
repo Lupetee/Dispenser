@@ -10,6 +10,14 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 class OrderController extends Controller
 {
+
+    public function getOrderCount()
+    {
+        return response([
+            'count' => Order::count(),
+        ]);
+    }
+
     public function index(Request $request)
     {
         $orders = new Order();
