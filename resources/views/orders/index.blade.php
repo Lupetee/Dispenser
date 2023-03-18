@@ -15,6 +15,10 @@
     <div class="card">
         <!-- -->
         <div class="card-body">
+            <div id="alert" class="alert alert-primary d-none" role="alert">
+                New order added. Click here to
+                <a class="text-primary" href="javascript:window.location.href=window.location.href">reload </a>
+            </div>
             <div class="row">
                 <!-- <div class="col-md-3"></div> -->
                 <div class="col-md-12">
@@ -42,9 +46,9 @@
 
             <div class="container-fluid m-0 p-0">
                 <form action="{{ route('orders.index') }}" method="GET">
-                                            <p>
+                    <p>
                         Station Numbers
-                        </p>
+                    </p>
                     <div class="d-flex w-100">
 
                         <select name="station" class="custom-select">
@@ -149,4 +153,51 @@
             {{ $orders->render() }}
         </div>
     </div><!-- -->
+
+    <script>
+        window.onload = (event) => {
+            let loaded = false
+            let count = null
+            let newCount = null
+
+            async function getCurrentOrderCount() {
+
+                const res = await fetch('/order-count', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+
+                const data = await res.json();
+
+                if (loaded == false) {
+                    count = data.count
+                }
+
+                if (loaded == false && count != null) {
+                    newCount = data.count
+                }
+
+                loaded = true
+
+            }
+
+            // setInterval(() => {
+            //     getCurrentOrderCount()
+            //     if (newCount > count) {
+            //         if (document.getElementById('alert').classList.contains('d-none')) {
+            //             document.getElementById('alert').classList.remove('d-none')
+            //         }
+            //     } else {
+            //         document.getElementById('alert').classList.add('d-none')
+            //     }
+            // }, 1000);
+
+
+
+
+        }
+    </script>
 @endsection
