@@ -41,6 +41,15 @@
                         <i class="nav-icon fas fa-users"></i>
                         <p>Patients</p>
                     </a>
+                    <ul>
+                    <li class="nav-item has-treeview">
+                        <a href="{{ route('customers.medication') }}" class="nav-link {{ activeSegment('customers') }}">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>24 Hr Medication</p>
+                        </a>
+                    </li>
+                    </ul>
+                    
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="{{ route('cart.index') }}" class="nav-link {{ activeSegment('cart') }}">
@@ -52,6 +61,12 @@
                     <a href="{{ route('orders.index') }}" class="nav-link {{ activeSegment('orders') }}">
                         <i class="nav-icon fas fa-chart-line"></i>
                         <p>Order History</p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="{{ route('messages.index') }}" class="nav-link {{ activeSegment('messages') }}">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>Message</p>
                     </a>
                 </li>
                 <li class="nav-item has-treeview">

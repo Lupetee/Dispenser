@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SettingController;
@@ -22,6 +23,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('products', ProductController::class);
 
     Route::resource('customers', CustomerController::class);
+    Route::get('customers.medication', [CustomerController::class, 'medication'])->name('customers.medication');
 
     Route::resource('orders', OrderController::class);
     Route::get('order-receipt/{order}', [OrderController::class, 'viewReceipt'])->name('order.viewReceipt');
@@ -32,4 +34,12 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('/cart/change-qty', [CartController::class, 'changeQty']);
     Route::delete('/cart/delete', [CartController::class, 'delete']);
     Route::delete('/cart/empty', [CartController::class, 'empty']);
+
+    Route::resource('messages', MessageController::class);
+
+    
+    // Route::get('/message',[MessageController::class, 'index'])->name('message.index');
+    // Route::post('/message',[MessageController::class, 'store'])->name('message.store');
+
+
 });
