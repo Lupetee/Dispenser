@@ -27,6 +27,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::resource('customers', CustomerController::class);
     Route::get('customers.medication', [CustomerController::class, 'medication'])->name('customers.medication');
+    Route::get('customers/{customer}/editmedication', [CustomerController::class, 'editmedication'])->name('customers.editmedication');
+    Route::put('customers.updatemedication', [CustomerController::class, 'updatemedication'])->name('customers.updatemedication');
 
     Route::resource('orders', OrderController::class);
     Route::get('order-receipt/{order}', [OrderController::class, 'viewReceipt'])->name('order.viewReceipt');

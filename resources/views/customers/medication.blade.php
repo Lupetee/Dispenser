@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Patient Management')
-@section('content-header', 'Patient Management')
+@section('title', '24Hr Medication')
+@section('content-header', '24Hr Medication')
 @section('content-actions')
     @if (Auth::user()->roles == 'nurse')
         <a href="{{ route('customers.create') }}" class="btn btn-success"><i class="fas fa-plus"></i> Add New Patient</a>
@@ -30,23 +30,34 @@
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">
                     <tr>
-                        <th>ID Number</th>
-                        <th>Name</th>
-                        <th>Room Number</th>
                         <th>Date</th>
-                        <th>Actions</th>
+                        <th>Name of Patient</th>
+                        <th>Medicines & IV Fluids</th>
+                            <th>Requested(Quantity)</th>
+                            <th>Dispensed(Quantity)</th>
+                        <th>Prepared by (Nurse on Duty)</th>
+                        <th>Checked / Revied by (Pharmacist on Duty)</th>
+                        <th>Remarks</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($customers as $customer)
                         <tr>
-                            <td>{{ $customer->id }}</td>
+                            <td>{{ $customer->updated_at }}</td>
                             <td>{{ $customer->first_name }} {{ $customer->last_name }}</td>
-                            <td>{{ $customer->room_number }}</td>
-                            <td>{{ $customer->created_at }}</td>
+                            <td>{{ $customer->medicines }}</td>
+                            <td>{{ $customer->requested }}</td>
+                            <td>{{ $customer->dispensed }}</td>
+                            <td>{{ $customer->nurse_duty }}</td>
+                            <td>{{ $customer->pharmacist_duty }}</td>
+                            <td>{{ $customer->daily_remarks }}</td>
                             <td>
-                                <a href="{{ route('customers.edit', $customer) }}" class="btn btn-primary"><i
+                                
+                                    
+                                <a href="{{ route('customers.editmedication', $customer) }}" class="btn btn-primary"><i
                                         class="fas fa-edit"></i></a>
+
                                 <button class="btn btn-danger btn-delete"
                                     data-url="{{ route('customers.destroy', $customer) }}"><i
                                         class="fas fa-trash"></i></button>

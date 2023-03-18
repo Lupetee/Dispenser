@@ -60,7 +60,7 @@
                 <li class="nav-item has-treeview">
                     <a href="{{ route('orders.index') }}" class="nav-link {{ activeSegment('orders') }}">
                         <i class="nav-icon fas fa-chart-line"></i>
-                        <p>Order History</p>
+                        <p>Orders</p>
                     </a>
                 </li>
                 <li class="nav-item has-treeview">

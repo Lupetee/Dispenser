@@ -20,7 +20,28 @@ class UserSeeder extends Seeder
             'first_name' => 'Admin',
             'last_name' => 'CA',
             'email'=>'admin@mail.com',
-            'password' => bcrypt('password')
+            'password' => bcrypt('password'),
+            'roles' => 'admin'
+        ]);
+
+        User::updateOrCreate([
+            'email' => 'nurse@mail.com'
+        ], [
+            'first_name' => 'Nurse',
+            'last_name' => 'Station',
+            'email'=>'nurse@mail.com',
+            'password' => bcrypt('password'),
+            'roles' => 'nurse'
+        ]);
+
+        User::updateOrCreate([
+            'email' => 'pharmacy@mail.com'
+        ], [
+            'first_name' => 'Pharmacy',
+            'last_name' => 'Station',
+            'email'=>'pharmacy@mail.com',
+            'password' => bcrypt('password'),
+            'roles' => 'pharmacy'
         ]);
     }
 }

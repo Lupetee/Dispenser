@@ -6,9 +6,6 @@
     @if (Auth::user()->roles == 'admin')
         <a href="{{ route('cart.index') }}" class="btn btn-success">Place Order</a>
     @endif
-    @if (Auth::user()->roles == 'nurse')
-        <a href="{{ route('cart.index') }}" class="btn btn-success">Place Order</a>
-    @endif
 @endsection
 
 @section('content')
