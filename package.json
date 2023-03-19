@@ -29,6 +29,7 @@
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.13.0",
         "admin-lte": "^3.0.4",
+        "react-select": "^5.7.0",
         "sweetalert2": "^9.10.12",
         "vue-template-compiler": "^2.7.14"
     }
