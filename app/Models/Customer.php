@@ -33,6 +33,12 @@ class Customer extends Model
         'restricted_drugs',
 
         'doctor_name',
+        'medicines_fluids',
+        'requested',
+        'dispensed',
+        'pharacist_duty',
+        'nurse_duty',
+        'daily_remarks',
     ];
     public function scopeFilter($query, array $filters)
 {
