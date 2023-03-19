@@ -142,7 +142,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::u3IUCn3lYps1vjs7',
+            '_route' => 'generated::awx8SdPZFH9SmUpr',
           ),
           1 => NULL,
           2 => 
@@ -162,7 +162,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::XDsQHgZsYjT0bwb2',
+            '_route' => 'generated::vxdYpoqR6LBEZitO',
           ),
           1 => NULL,
           2 => 
@@ -219,7 +219,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::kphrUKDLadm8vafk',
+            '_route' => 'generated::iTbDz4iz7fqf9wEn',
           ),
           1 => NULL,
           2 => 
@@ -274,7 +274,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::jP3fGBOkXdoLZLOq',
+            '_route' => 'generated::leTjlGQMoR50aW04',
           ),
           1 => NULL,
           2 => 
@@ -365,7 +365,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Qm1L00a6P00TXpGB',
+            '_route' => 'generated::8sDvNahiayAN1HsD',
           ),
           1 => NULL,
           2 => 
@@ -703,7 +703,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::pKZ0dQkbTjb2zcf4',
+            '_route' => 'generated::aP1hN5GOJMBVlxwg',
           ),
           1 => NULL,
           2 => 
@@ -722,7 +722,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::1llxsB1HeIbQyRSA',
+            '_route' => 'generated::ezBXs2b1PNsQBAMh',
           ),
           1 => NULL,
           2 => 
@@ -741,7 +741,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::srVfiyf5t6OGqsPo',
+            '_route' => 'generated::hzNTq5cIaNSaKxhJ',
           ),
           1 => NULL,
           2 => 
@@ -960,10 +960,85 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/admin/doctorsordersheet' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'doctorsordersheet.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'doctorsordersheet.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/doctorsordersheet/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'doctorsordersheet.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/doctorsordersheet.replicate' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'doctorsordersheet.replicate',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'PUT' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
     ),
     2 => 
     array (
-      0 => '{^(?|/_debugbar/c(?|lockwork/([^/]++)(*:39)|ache/([^/]++)(?:/([^/]++))?(*:73))|/password/reset/([^/]++)(*:105)|/admin/(?|products/([^/]++)(?|(*:143)|/edit(*:156)|(*:164))|customers/([^/]++)(?|(*:194)|/edit(?|(*:210)|medication(*:228))|(*:237))|order(?|s/([^/]++)(?|(*:267)|/edit(*:280)|(*:288))|\\-receipt/([^/]++)(*:315))|messages/([^/]++)(?|(*:344)|/edit(*:357)|(*:365))|restricted/([^/]++)(?|(*:396)|/(?|edit(*:412)|replicate(*:429))|(*:438))|nonrestricted/([^/]++)(?|(*:472)|/(?|edit(*:488)|replicate(*:505))|(*:514))))/?$}sDu',
+      0 => '{^(?|/_debugbar/c(?|lockwork/([^/]++)(*:39)|ache/([^/]++)(?:/([^/]++))?(*:73))|/password/reset/([^/]++)(*:105)|/admin/(?|products/([^/]++)(?|(*:143)|/edit(*:156)|(*:164))|customers/([^/]++)(?|(*:194)|/edit(?|(*:210)|medication(*:228))|(*:237))|order(?|s/([^/]++)(?|(*:267)|/edit(*:280)|(*:288))|\\-receipt/([^/]++)(*:315))|messages/([^/]++)(?|(*:344)|/edit(*:357)|(*:365))|restricted/([^/]++)(?|(*:396)|/(?|edit(*:412)|replicate(*:429))|(*:438))|nonrestricted/([^/]++)(?|(*:472)|/(?|edit(*:488)|replicate(*:505))|(*:514))|doctorsordersheet/([^/]++)(?|(*:552)|/(?|edit(*:568)|replicate(*:585))|(*:594))))/?$}sDu',
     ),
     3 => 
     array (
@@ -1656,6 +1731,117 @@ app('router')->setCompiledRoutes(
           5 => true,
           6 => NULL,
         ),
+      ),
+      552 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'doctorsordersheet.show',
+          ),
+          1 => 
+          array (
+            0 => 'doctorsordersheet',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      568 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'doctorsordersheet.edit',
+          ),
+          1 => 
+          array (
+            0 => 'doctorsordersheet',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      585 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'doctorsordersheet.editreplicate',
+          ),
+          1 => 
+          array (
+            0 => 'doctorsordersheet',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      594 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'doctorsordersheet.update',
+          ),
+          1 => 
+          array (
+            0 => 'doctorsordersheet',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'doctorsordersheet.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'doctorsordersheet',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
         2 => 
         array (
           0 => NULL,
@@ -1970,7 +2156,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::u3IUCn3lYps1vjs7' => 
+    'generated::awx8SdPZFH9SmUpr' => 
     array (
       'methods' => 
       array (
@@ -1993,7 +2179,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::u3IUCn3lYps1vjs7',
+        'as' => 'generated::awx8SdPZFH9SmUpr',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2009,7 +2195,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::XDsQHgZsYjT0bwb2' => 
+    'generated::vxdYpoqR6LBEZitO' => 
     array (
       'methods' => 
       array (
@@ -2031,7 +2217,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::XDsQHgZsYjT0bwb2',
+        'as' => 'generated::vxdYpoqR6LBEZitO',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2121,7 +2307,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::kphrUKDLadm8vafk' => 
+    'generated::iTbDz4iz7fqf9wEn' => 
     array (
       'methods' => 
       array (
@@ -2141,7 +2327,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::kphrUKDLadm8vafk',
+        'as' => 'generated::iTbDz4iz7fqf9wEn',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2230,7 +2416,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::jP3fGBOkXdoLZLOq' => 
+    'generated::leTjlGQMoR50aW04' => 
     array (
       'methods' => 
       array (
@@ -2250,7 +2436,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::jP3fGBOkXdoLZLOq',
+        'as' => 'generated::leTjlGQMoR50aW04',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2449,7 +2635,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Qm1L00a6P00TXpGB' => 
+    'generated::8sDvNahiayAN1HsD' => 
     array (
       'methods' => 
       array (
@@ -2469,7 +2655,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::Qm1L00a6P00TXpGB',
+        'as' => 'generated::8sDvNahiayAN1HsD',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3654,7 +3840,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::pKZ0dQkbTjb2zcf4' => 
+    'generated::aP1hN5GOJMBVlxwg' => 
     array (
       'methods' => 
       array (
@@ -3675,7 +3861,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::pKZ0dQkbTjb2zcf4',
+        'as' => 'generated::aP1hN5GOJMBVlxwg',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3691,7 +3877,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::1llxsB1HeIbQyRSA' => 
+    'generated::ezBXs2b1PNsQBAMh' => 
     array (
       'methods' => 
       array (
@@ -3712,7 +3898,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::1llxsB1HeIbQyRSA',
+        'as' => 'generated::ezBXs2b1PNsQBAMh',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3728,7 +3914,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::srVfiyf5t6OGqsPo' => 
+    'generated::hzNTq5cIaNSaKxhJ' => 
     array (
       'methods' => 
       array (
@@ -3749,7 +3935,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::srVfiyf5t6OGqsPo',
+        'as' => 'generated::hzNTq5cIaNSaKxhJ',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4692,6 +4878,345 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'nonrestricted.replicate',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'doctorsordersheet.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/doctorsordersheet',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'doctorsordersheet.index',
+        'uses' => 'App\\Http\\Controllers\\DoctorOrderSheetController@index',
+        'controller' => 'App\\Http\\Controllers\\DoctorOrderSheetController@index',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'doctorsordersheet.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/doctorsordersheet/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'doctorsordersheet.create',
+        'uses' => 'App\\Http\\Controllers\\DoctorOrderSheetController@create',
+        'controller' => 'App\\Http\\Controllers\\DoctorOrderSheetController@create',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'doctorsordersheet.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/doctorsordersheet',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'doctorsordersheet.store',
+        'uses' => 'App\\Http\\Controllers\\DoctorOrderSheetController@store',
+        'controller' => 'App\\Http\\Controllers\\DoctorOrderSheetController@store',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'doctorsordersheet.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/doctorsordersheet/{doctorsordersheet}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'doctorsordersheet.show',
+        'uses' => 'App\\Http\\Controllers\\DoctorOrderSheetController@show',
+        'controller' => 'App\\Http\\Controllers\\DoctorOrderSheetController@show',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'doctorsordersheet.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/doctorsordersheet/{doctorsordersheet}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'doctorsordersheet.edit',
+        'uses' => 'App\\Http\\Controllers\\DoctorOrderSheetController@edit',
+        'controller' => 'App\\Http\\Controllers\\DoctorOrderSheetController@edit',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'doctorsordersheet.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'admin/doctorsordersheet/{doctorsordersheet}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'doctorsordersheet.update',
+        'uses' => 'App\\Http\\Controllers\\DoctorOrderSheetController@update',
+        'controller' => 'App\\Http\\Controllers\\DoctorOrderSheetController@update',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'doctorsordersheet.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'admin/doctorsordersheet/{doctorsordersheet}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'doctorsordersheet.destroy',
+        'uses' => 'App\\Http\\Controllers\\DoctorOrderSheetController@destroy',
+        'controller' => 'App\\Http\\Controllers\\DoctorOrderSheetController@destroy',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'doctorsordersheet.editreplicate' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/doctorsordersheet/{doctorsordersheet}/replicate',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\DoctorOrderSheetController@editreplicate',
+        'controller' => 'App\\Http\\Controllers\\DoctorOrderSheetController@editreplicate',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'doctorsordersheet.editreplicate',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'doctorsordersheet.replicate' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+      ),
+      'uri' => 'admin/doctorsordersheet.replicate',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\DoctorOrderSheetController@replicate',
+        'controller' => 'App\\Http\\Controllers\\DoctorOrderSheetController@replicate',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'doctorsordersheet.replicate',
       ),
       'fallback' => false,
       'defaults' => 

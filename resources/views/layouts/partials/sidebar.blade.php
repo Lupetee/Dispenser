@@ -43,6 +43,10 @@
                     </a>
                     <ul>
                     <li class="nav-item has-treeview">
+                        <a href="{{ route('doctorsordersheet.index') }}" class="nav-link {{ activeSegment('doctorsordersheet') }}">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>Doctor's Order Sheet</p>
+                        </a>
                         <a href="{{ route('customers.medication') }}" class="nav-link {{ activeSegment('customers.medication') }}">
                             <i class="nav-icon fas fa-users"></i>
                             <p>24 Hr Medication</p>

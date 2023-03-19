@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Create Customer')
-@section('content-header', 'Create Customer')
+@section('title', 'Restricted Medication')
+@section('content-header', 'Restricted Medication')
 
 @section('content')
 
@@ -15,7 +15,7 @@
                     <label for="name">Patient Name</label>
                     <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
                            id="name"
-                           placeholder="First Name" value="{{ old('name') }}">
+                           placeholder="Patient Name" value="{{ old('name') }}">
                     @error('name')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -27,7 +27,7 @@
                     <label for="ward">Ward</label>
                     <input type="number" name="ward" class="form-control @error('ward') is-invalid @enderror"
                            id="ward"
-                           placeholder="Last Name" value="{{ old('ward') }}">
+                           placeholder="Ward Number" value="{{ old('ward') }}">
                     @error('ward')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -38,7 +38,7 @@
                 <div class="form-group">
                     <label for="drug">Name of Drugs</label>
                     <input type="text" name="drug" class="form-control @error('drug') is-invalid @enderror" id="drug"
-                           placeholder="Email" value="{{ old('drug') }}">
+                           placeholder="Name of Drugs" value="{{ old('drug') }}">
                     @error('drug')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -49,7 +49,7 @@
                 <div class="form-group">
                     <label for="dosege">Dosage / Frequency</label>
                     <input type="text" name="dosege" class="form-control @error('dosege') is-invalid @enderror" id="dosege"
-                           placeholder="Room Number" value="{{ old('dosege') }}">
+                           placeholder="Dosage / Frequency" value="{{ old('dosege') }}">
                     @error('dosege')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -60,7 +60,7 @@
                 <div class="form-group">
                     <label for="total">Total</label>
                     <input type="text" name="total" class="form-control @error('total') is-invalid @enderror" id="total"
-                           placeholder="Contact Number" value="{{ old('total') }}">
+                           placeholder="Total" value="{{ old('total') }}">
                     @error('total')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -72,7 +72,7 @@
                     <label for="nurse">Nurse on Duty</label>
                     <input type="text" name="nurse" class="form-control @error('nurse') is-invalid @enderror"
                            id="nurse"
-                           placeholder="nurse" value="{{ old('nurse') }}">
+                           placeholder="Nurse on Duty" value="{{ old('nurse') }}">
                     @error('nurse')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -84,7 +84,7 @@
                     <label for="pharmacist">Pharmacist on Duty</label>
                     <input type="text" name="pharmacist" class="form-control @error('pharmacist') is-invalid @enderror"
                            id="pharmacist"
-                           placeholder="pharmacist" value="{{ old('pharmacist') }}">
+                           placeholder="Pharmacist on Duty" value="{{ old('pharmacist') }}">
                     @error('pharmacist')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

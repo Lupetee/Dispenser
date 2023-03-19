@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Create Customer')
-@section('content-header', 'Create Customer')
+@section('title', 'Non Restricted Medication')
+@section('content-header', 'Non Restricted Medication')
 
 @section('content')
 
@@ -17,7 +17,7 @@
                     <label for="name">Patient Name</label>
                     <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
                            id="name"
-                           placeholder="Name" value="{{ old('name', $nonrestricted->name) }}">
+                           placeholder="Name" value="{{ old('name', $nonrestricted->name) }}" readonly>
                     @error('name')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
