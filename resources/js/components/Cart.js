@@ -209,9 +209,14 @@ class Cart extends Component {
     }
     handleClickSubmit() {
         Swal.fire({
-            title: "Received Amount",
-            input: "text",
-            inputValue: this.getTotal(this.state.cart),
+            html: `
+            <ul class="list-group">
+                <li class="list-group-item text-left">Patient Name: ${this.state.patient.name}</li>
+                <li class="list-group-item text-left">Bed#: ${this.state.patient.bed_number}</li>
+                <li class="list-group-item text-left">Doctor's Name: ${this.state.patient.doctor}</li>
+                <li class="list-group-item text-left">Nurse: ${this.state.patient.nurse}</li>
+                <li class="list-group-item text-left">Station Number: ${this.state.station_id}</li>
+            </u>`,
             showCancelButton: true,
             confirmButtonText: "Send",
             showLoaderOnConfirm: true,
@@ -220,7 +225,7 @@ class Cart extends Component {
                     .post("/admin/orders", {
                         customer_id: this.state.customer_id,
                         station_id: this.state.station_id,
-                        amount,
+                        amount: 0,
                     })
                     .then((res) => {
                         this.loadCart();
