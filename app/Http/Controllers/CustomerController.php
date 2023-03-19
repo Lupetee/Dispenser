@@ -191,8 +191,6 @@ class CustomerController extends Controller
 
     public function editmedication(Request $request, Customer $customer)
     {
-    
-       
             return view('customers.editmedication', compact('customer'));
     }
 

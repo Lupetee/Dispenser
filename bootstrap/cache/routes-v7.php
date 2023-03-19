@@ -142,7 +142,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::RBGLDM1TIABREoRB',
+            '_route' => 'generated::u3IUCn3lYps1vjs7',
           ),
           1 => NULL,
           2 => 
@@ -162,7 +162,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::fQccixNvbDiGs2dx',
+            '_route' => 'generated::XDsQHgZsYjT0bwb2',
           ),
           1 => NULL,
           2 => 
@@ -219,7 +219,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::wcJr9nfpOZ1T6gKs',
+            '_route' => 'generated::kphrUKDLadm8vafk',
           ),
           1 => NULL,
           2 => 
@@ -274,7 +274,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::CuxhMIxeM4oX0Z6k',
+            '_route' => 'generated::jP3fGBOkXdoLZLOq',
           ),
           1 => NULL,
           2 => 
@@ -365,7 +365,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::gMNgM8o07GeQQm7r',
+            '_route' => 'generated::Qm1L00a6P00TXpGB',
           ),
           1 => NULL,
           2 => 
@@ -703,7 +703,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::7noyieZvdo1WVlwE',
+            '_route' => 'generated::pKZ0dQkbTjb2zcf4',
           ),
           1 => NULL,
           2 => 
@@ -722,7 +722,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::LcTJaB45cM5zrD4J',
+            '_route' => 'generated::1llxsB1HeIbQyRSA',
           ),
           1 => NULL,
           2 => 
@@ -741,7 +741,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::dptYwZTbCFjecEww',
+            '_route' => 'generated::srVfiyf5t6OGqsPo',
           ),
           1 => NULL,
           2 => 
@@ -810,10 +810,160 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/admin/restricted' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'restricted.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'restricted.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/restricted/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'restricted.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/restricted.replicate' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'restricted.replicate',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'PUT' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/nonrestricted' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nonrestricted.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nonrestricted.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/nonrestricted/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nonrestricted.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/nonrestricted.replicate' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nonrestricted.replicate',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'PUT' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
     ),
     2 => 
     array (
-      0 => '{^(?|/_debugbar/c(?|lockwork/([^/]++)(*:39)|ache/([^/]++)(?:/([^/]++))?(*:73))|/password/reset/([^/]++)(*:105)|/admin/(?|products/([^/]++)(?|(*:143)|/edit(*:156)|(*:164))|customers/([^/]++)(?|(*:194)|/edit(?|(*:210)|medication(*:228))|(*:237))|order(?|s/([^/]++)(?|(*:267)|/edit(*:280)|(*:288))|\\-receipt/([^/]++)(*:315))|messages/([^/]++)(?|(*:344)|/edit(*:357)|(*:365))))/?$}sDu',
+      0 => '{^(?|/_debugbar/c(?|lockwork/([^/]++)(*:39)|ache/([^/]++)(?:/([^/]++))?(*:73))|/password/reset/([^/]++)(*:105)|/admin/(?|products/([^/]++)(?|(*:143)|/edit(*:156)|(*:164))|customers/([^/]++)(?|(*:194)|/edit(?|(*:210)|medication(*:228))|(*:237))|order(?|s/([^/]++)(?|(*:267)|/edit(*:280)|(*:288))|\\-receipt/([^/]++)(*:315))|messages/([^/]++)(?|(*:344)|/edit(*:357)|(*:365))|restricted/([^/]++)(?|(*:396)|/(?|edit(*:412)|replicate(*:429))|(*:438))|nonrestricted/([^/]++)(?|(*:472)|/(?|edit(*:488)|replicate(*:505))|(*:514))))/?$}sDu',
     ),
     3 => 
     array (
@@ -1284,6 +1434,228 @@ app('router')->setCompiledRoutes(
           5 => true,
           6 => NULL,
         ),
+      ),
+      396 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'restricted.show',
+          ),
+          1 => 
+          array (
+            0 => 'restricted',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      412 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'restricted.edit',
+          ),
+          1 => 
+          array (
+            0 => 'restricted',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      429 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'restricted.editreplicate',
+          ),
+          1 => 
+          array (
+            0 => 'restricted',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      438 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'restricted.update',
+          ),
+          1 => 
+          array (
+            0 => 'restricted',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'restricted.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'restricted',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      472 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nonrestricted.show',
+          ),
+          1 => 
+          array (
+            0 => 'nonrestricted',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      488 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nonrestricted.edit',
+          ),
+          1 => 
+          array (
+            0 => 'nonrestricted',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      505 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nonrestricted.editreplicate',
+          ),
+          1 => 
+          array (
+            0 => 'nonrestricted',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      514 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nonrestricted.update',
+          ),
+          1 => 
+          array (
+            0 => 'nonrestricted',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'nonrestricted.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'nonrestricted',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
         2 => 
         array (
           0 => NULL,
@@ -1598,7 +1970,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::RBGLDM1TIABREoRB' => 
+    'generated::u3IUCn3lYps1vjs7' => 
     array (
       'methods' => 
       array (
@@ -1621,7 +1993,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::RBGLDM1TIABREoRB',
+        'as' => 'generated::u3IUCn3lYps1vjs7',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1637,7 +2009,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::fQccixNvbDiGs2dx' => 
+    'generated::XDsQHgZsYjT0bwb2' => 
     array (
       'methods' => 
       array (
@@ -1659,7 +2031,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::fQccixNvbDiGs2dx',
+        'as' => 'generated::XDsQHgZsYjT0bwb2',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1749,7 +2121,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::wcJr9nfpOZ1T6gKs' => 
+    'generated::kphrUKDLadm8vafk' => 
     array (
       'methods' => 
       array (
@@ -1769,7 +2141,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::wcJr9nfpOZ1T6gKs',
+        'as' => 'generated::kphrUKDLadm8vafk',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1858,7 +2230,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::CuxhMIxeM4oX0Z6k' => 
+    'generated::jP3fGBOkXdoLZLOq' => 
     array (
       'methods' => 
       array (
@@ -1878,7 +2250,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::CuxhMIxeM4oX0Z6k',
+        'as' => 'generated::jP3fGBOkXdoLZLOq',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2077,7 +2449,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::gMNgM8o07GeQQm7r' => 
+    'generated::Qm1L00a6P00TXpGB' => 
     array (
       'methods' => 
       array (
@@ -2097,7 +2469,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::gMNgM8o07GeQQm7r',
+        'as' => 'generated::Qm1L00a6P00TXpGB',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3282,7 +3654,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::7noyieZvdo1WVlwE' => 
+    'generated::pKZ0dQkbTjb2zcf4' => 
     array (
       'methods' => 
       array (
@@ -3303,7 +3675,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::7noyieZvdo1WVlwE',
+        'as' => 'generated::pKZ0dQkbTjb2zcf4',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3319,7 +3691,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::LcTJaB45cM5zrD4J' => 
+    'generated::1llxsB1HeIbQyRSA' => 
     array (
       'methods' => 
       array (
@@ -3340,7 +3712,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::LcTJaB45cM5zrD4J',
+        'as' => 'generated::1llxsB1HeIbQyRSA',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3356,7 +3728,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::dptYwZTbCFjecEww' => 
+    'generated::srVfiyf5t6OGqsPo' => 
     array (
       'methods' => 
       array (
@@ -3377,7 +3749,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::dptYwZTbCFjecEww',
+        'as' => 'generated::srVfiyf5t6OGqsPo',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3642,6 +4014,684 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'restricted.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/restricted',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'restricted.index',
+        'uses' => 'App\\Http\\Controllers\\RestrictedController@index',
+        'controller' => 'App\\Http\\Controllers\\RestrictedController@index',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'restricted.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/restricted/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'restricted.create',
+        'uses' => 'App\\Http\\Controllers\\RestrictedController@create',
+        'controller' => 'App\\Http\\Controllers\\RestrictedController@create',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'restricted.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/restricted',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'restricted.store',
+        'uses' => 'App\\Http\\Controllers\\RestrictedController@store',
+        'controller' => 'App\\Http\\Controllers\\RestrictedController@store',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'restricted.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/restricted/{restricted}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'restricted.show',
+        'uses' => 'App\\Http\\Controllers\\RestrictedController@show',
+        'controller' => 'App\\Http\\Controllers\\RestrictedController@show',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'restricted.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/restricted/{restricted}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'restricted.edit',
+        'uses' => 'App\\Http\\Controllers\\RestrictedController@edit',
+        'controller' => 'App\\Http\\Controllers\\RestrictedController@edit',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'restricted.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'admin/restricted/{restricted}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'restricted.update',
+        'uses' => 'App\\Http\\Controllers\\RestrictedController@update',
+        'controller' => 'App\\Http\\Controllers\\RestrictedController@update',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'restricted.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'admin/restricted/{restricted}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'restricted.destroy',
+        'uses' => 'App\\Http\\Controllers\\RestrictedController@destroy',
+        'controller' => 'App\\Http\\Controllers\\RestrictedController@destroy',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'restricted.editreplicate' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/restricted/{restricted}/replicate',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\RestrictedController@editreplicate',
+        'controller' => 'App\\Http\\Controllers\\RestrictedController@editreplicate',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'restricted.editreplicate',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'restricted.replicate' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+      ),
+      'uri' => 'admin/restricted.replicate',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\RestrictedController@replicate',
+        'controller' => 'App\\Http\\Controllers\\RestrictedController@replicate',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'restricted.replicate',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'nonrestricted.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/nonrestricted',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'nonrestricted.index',
+        'uses' => 'App\\Http\\Controllers\\NonRestrictedController@index',
+        'controller' => 'App\\Http\\Controllers\\NonRestrictedController@index',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'nonrestricted.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/nonrestricted/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'nonrestricted.create',
+        'uses' => 'App\\Http\\Controllers\\NonRestrictedController@create',
+        'controller' => 'App\\Http\\Controllers\\NonRestrictedController@create',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'nonrestricted.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/nonrestricted',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'nonrestricted.store',
+        'uses' => 'App\\Http\\Controllers\\NonRestrictedController@store',
+        'controller' => 'App\\Http\\Controllers\\NonRestrictedController@store',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'nonrestricted.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/nonrestricted/{nonrestricted}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'nonrestricted.show',
+        'uses' => 'App\\Http\\Controllers\\NonRestrictedController@show',
+        'controller' => 'App\\Http\\Controllers\\NonRestrictedController@show',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'nonrestricted.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/nonrestricted/{nonrestricted}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'nonrestricted.edit',
+        'uses' => 'App\\Http\\Controllers\\NonRestrictedController@edit',
+        'controller' => 'App\\Http\\Controllers\\NonRestrictedController@edit',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'nonrestricted.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'admin/nonrestricted/{nonrestricted}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'nonrestricted.update',
+        'uses' => 'App\\Http\\Controllers\\NonRestrictedController@update',
+        'controller' => 'App\\Http\\Controllers\\NonRestrictedController@update',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'nonrestricted.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'admin/nonrestricted/{nonrestricted}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'nonrestricted.destroy',
+        'uses' => 'App\\Http\\Controllers\\NonRestrictedController@destroy',
+        'controller' => 'App\\Http\\Controllers\\NonRestrictedController@destroy',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'nonrestricted.editreplicate' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/nonrestricted/{nonrestricted}/replicate',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\NonRestrictedController@editreplicate',
+        'controller' => 'App\\Http\\Controllers\\NonRestrictedController@editreplicate',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'nonrestricted.editreplicate',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'nonrestricted.replicate' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+      ),
+      'uri' => 'admin/nonrestricted.replicate',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\NonRestrictedController@replicate',
+        'controller' => 'App\\Http\\Controllers\\NonRestrictedController@replicate',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'nonrestricted.replicate',
       ),
       'fallback' => false,
       'defaults' => 
