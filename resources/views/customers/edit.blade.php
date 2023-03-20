@@ -23,7 +23,7 @@
                 <div class="form-group">
                     <label for="first_name">First Name</label>
                     <input type="text" name="first_name" class="form-control @error('first_name') is-invalid @enderror"
-                        id="first_name" placeholder="First Name" value="{{ old('first_name', $customer->first_name) }}">
+                        id="first_name" placeholder="First Name" value="{{ old('first_name', $customer->first_name) }}"readonly>
                     @error('first_name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
