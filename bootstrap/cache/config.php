@@ -124,18 +124,18 @@
   ),
   'broadcasting' => 
   array (
-    'default' => 'log',
+    'default' => 'pusher',
     'connections' => 
     array (
       'pusher' => 
       array (
         'driver' => 'pusher',
-        'key' => '',
-        'secret' => '',
-        'app_id' => '',
+        'key' => 'bfefdaa10969644c47ca',
+        'secret' => '17855945d70befa4515e',
+        'app_id' => '1570747',
         'options' => 
         array (
-          'cluster' => 'mt1',
+          'cluster' => 'ap1',
           'useTLS' => true,
         ),
       ),

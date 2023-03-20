@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\MyEvent;
 use App\Models\Message;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreMessageRequest;
@@ -22,7 +23,7 @@ class MessageController extends Controller
         //     'message' => $request->message,
         //     'name' => $request->name,
         // ]);
-
+            event(new MyEvent($message));
         return redirect()->route('messages.index')->with('success', 'Message Added!');
     }
 

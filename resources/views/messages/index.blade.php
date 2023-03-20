@@ -8,6 +8,63 @@
     <div class="card-body">
         <form action="{{ route('messages.store') }}" method="post">
             @csrf
+
+
+            @if(Auth::user()->roles=='admin')
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">To</label>
+                <select name="to" class="form-control @error('to') is-invalid @enderror" aria-label="select example">
+                <option selected disabled>Select</option>
+                <option value="Nurse Station 1">Nurse Station 1</option>
+                <option value="Nurse Station 2">Nurse Station 2</option>
+                <option value="Nurse Station 3">Nurse Station 3</option>
+                <option value="Nurse Station 4">Nurse Station 4</option>
+                <option value="Nurse Station 5">Nurse Station 5</option>
+                <option value="Nurse Station 6">Nurse Station 6</option>
+                <option value="Pharmacy">Pharmacy</option>
+                </select>
+                @error('to')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+            @endif
+
+            @if(Auth::user()->roles=='Nurse')
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">To</label>
+                <select name="to" class="form-control @error('to') is-invalid @enderror" aria-label="select example">
+                <option selected disabled>Select</option>
+                <option value="Pharmacy">Pharmacy</option>
+                </select>
+                @error('to')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+            @endif
+
+            @if(Auth::user()->roles=='pharmacy')
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">To</label>
+                <select name="to" class="form-control @error('to') is-invalid @enderror" aria-label="select example">
+                <option selected disabled>Select</option>
+                <option value="Nurse Station 1">Nurse Station 1</option>
+                <option value="Nurse Station 2">Nurse Station 2</option>
+                <option value="Nurse Station 3">Nurse Station 3</option>
+                <option value="Nurse Station 4">Nurse Station 4</option>
+                <option value="Nurse Station 5">Nurse Station 5</option>
+                <option value="Nurse Station 6">Nurse Station 6</option>
+                </select>
+                @error('to')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+            @endif
            
             <div class="form-group">
                 <label for="message">Message</label>
@@ -87,16 +144,18 @@
                         <thead class="thead-dark">
                             <tr>
                                 <!-- -->
-                                <th>From</th>
+                                <th>To</th>
                                 <th>Message</th>
+                                <th>From</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($message as $message)
                                 <tr>
-                                    <td>{{ $message->name}}</td>
+                                    <td>{{ $message->to}}</td>
                                     <td>{{ $message->message }}</td>
+                                    <td>{{ $message->name}}</td>
                                     <td>
                                      <form action="{{ route('messages.destroy', $message->id) }}" method="POST" style="display: inline-block">
                                      @csrf
@@ -118,15 +177,17 @@
                         <thead class="thead-dark">
                             <tr>
                                 <!-- -->
-                                <th>From</th>
+                                <th>to</th>
                                 <th>Message</th>
+                                <th>From</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($message as $message)
                                 <tr>
-                                    <td>{{ $message->name}}</td>
+                                    <td>{{ $message->to}}</td>
                                     <td>{{ $message->message }}</td>
+                                    <td>{{ $message->name }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -142,15 +203,17 @@
                         <thead class="thead-dark">
                             <tr>
                                 <!-- -->
-                                <th>From</th>
+                                <th>to</th>
                                 <th>Message</th>
+                                <th>From</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($message as $message)
                                 <tr>
-                                    <td>{{ $message->name}}</td>
+                                    <td>{{ $message->to}}</td>
                                     <td>{{ $message->message }}</td>
+                                    <td>{{ $message->name }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

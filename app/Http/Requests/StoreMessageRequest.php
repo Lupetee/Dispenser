@@ -25,7 +25,8 @@ class StoreMessageRequest extends FormRequest
     {
         return [
             'message'=>'required',
-            'name'=>'required'
+            'name'=>'required',
+            'to' =>'required'
         ];
     }
 }

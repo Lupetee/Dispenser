@@ -80,19 +80,6 @@
                     @enderror
                 </div>
 
-                <div class="form-group">
-                    <label for="avatar">Picture</label>
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" name="avatar" id="avatar">
-                        <label class="custom-file-label" for="avatar">Choose File</label>
-                    </div>
-                    @error('avatar')
-                    <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                    @enderror
-                </div>
-
 
                 <button class="btn btn-success btn-block btn-lg" type="submit">Submit</button>
             </form>

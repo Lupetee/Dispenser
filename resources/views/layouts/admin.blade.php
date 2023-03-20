@@ -12,9 +12,28 @@
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 	<!-- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
+    <script>
+  
+      // Enable pusher logging - don't include this in production
+      Pusher.logToConsole = true;
+  
+      var pusher = new Pusher('bfefdaa10969644c47ca', {
+        cluster: 'ap1'
+      });
+  
+      var channel = pusher.subscribe('my-channel');
+      channel.bind('my-event', function(data) {
+        toastr.success('New Message has been posted!' + JSON.stringify(data.notif.message) );
+       
+      });
+    </script>
     @yield('css')
     <script>
         window.APP = <?php echo json_encode([
@@ -22,7 +41,10 @@
                             'warning_quantity' => config('settings.warning_quantity')
                         ]) ?>
     </script>
-</head>
+    
+
+    
+    </head>
 
 <body class="hold-transition sidebar-mini">
     <!-- Site wrapper -->
