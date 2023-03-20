@@ -125,6 +125,7 @@ class CustomerController extends Controller
             'address' => $request->address,
             'avatar' => $avatar_path,
             'user_id' => $request->user()->id,
+            'room_number' => $request->room_number,
         ]);
 
         if (!$customer) {
