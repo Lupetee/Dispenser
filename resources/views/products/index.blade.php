@@ -6,6 +6,9 @@
     @if (Auth::user()->roles == 'pharmacy')
         <a href="{{ route('products.create') }}" class="btn btn-success"><i class="fas fa-plus"></i> Add New Product</a>
     @endif
+    @if (Auth::user()->roles == 'admin')
+    <a href="{{ route('products.create') }}" class="btn btn-success"><i class="fas fa-plus"></i> Add New Product</a>
+@endif
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('plugins/sweetalert2/sweetalert2.min.css') }}">

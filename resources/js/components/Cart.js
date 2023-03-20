@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { sum } from "lodash";
+import Select from "react-select";
 
 class Cart extends Component {
     constructor(props) {
@@ -32,6 +33,9 @@ class Cart extends Component {
             station_id: 1,
         };
 
+        this.selectRef = React.createRef();
+        this.handleReset = this.handleReset.bind(this);
+
         this.loadCart = this.loadCart.bind(this);
         this.handleOnChangeBarcode = this.handleOnChangeBarcode.bind(this);
         this.handleOnChangeStation = this.handleOnChangeStation.bind(this);
@@ -42,6 +46,7 @@ class Cart extends Component {
         this.loadProducts = this.loadProducts.bind(this);
         this.handleChangeSearch = this.handleChangeSearch.bind(this);
         this.handleSeach = this.handleSeach.bind(this);
+        this.resetCustomerId = this.resetCustomerId.bind(this);
         this.setCustomerId = this.setCustomerId.bind(this);
         this.handleClickSubmit = this.handleClickSubmit.bind(this);
     }
@@ -143,7 +148,6 @@ class Cart extends Component {
             this.loadProducts(event.target.value);
         }
     }
-
     addProductToCart(barcode) {
         let product = this.state.products.find((p) => p.barcode === barcode);
         if (!!product) {
@@ -187,15 +191,27 @@ class Cart extends Component {
                 });
         }
     }
-
-    setCustomerId(event) {
+    resetCustomerId() {
+        this.state.customer_id = "";
+    }
+    handleReset() {
+        this.selectRef.current.clearValue();
+    }
+    setCustomerId({ value }) {
         const selectedPatient = this.state.customers.find((cus) => {
-            return cus.id == parseInt(event.target.value);
+            return cus.id == parseInt(value);
         });
 
-        this.setState({
-            customer_id: event.target.value,
-            patient: {
+        let patientDetails = {
+            name: "Walk-in",
+            bed_number: "N/A",
+            doctor: "N/A",
+            nurse: "N/A",
+            date: new Date().toISOString().split("T")[0],
+        };
+
+        if (selectedPatient) {
+            patientDetails = {
                 name:
                     selectedPatient.first_name +
                     " " +
@@ -204,14 +220,26 @@ class Cart extends Component {
                 doctor: selectedPatient.doctor_name,
                 nurse: selectedPatient.name_of_nurse,
                 date: new Date().toISOString().split("T")[0],
+            };
+        }
+
+        this.setState({
+            customer_id: value,
+            patient: {
+                ...patientDetails,
             },
         });
     }
     handleClickSubmit() {
         Swal.fire({
-            title: "Received Amount",
-            input: "text",
-            inputValue: this.getTotal(this.state.cart),
+            html: `
+            <ul class="list-group">
+                <li class="list-group-item text-left">Patient Name: ${this.state.patient.name}</li>
+                <li class="list-group-item text-left">Bed#: ${this.state.patient.bed_number}</li>
+                <li class="list-group-item text-left">Doctor's Name: ${this.state.patient.doctor}</li>
+                <li class="list-group-item text-left">Nurse: ${this.state.patient.nurse}</li>
+                <li class="list-group-item text-left">Station Number: ${this.state.station_id}</li>
+            </u>`,
             showCancelButton: true,
             confirmButtonText: "Send",
             showLoaderOnConfirm: true,
@@ -220,7 +248,7 @@ class Cart extends Component {
                     .post("/admin/orders", {
                         customer_id: this.state.customer_id,
                         station_id: this.state.station_id,
-                        amount,
+                        amount: 0,
                     })
                     .then((res) => {
                         this.loadCart();
@@ -240,6 +268,7 @@ class Cart extends Component {
                     nurse: "N/A",
                     date: new Date().toISOString().split("T")[0],
                 };
+                this.handleReset();
             }
         });
     }
@@ -252,6 +281,7 @@ class Cart extends Component {
             patient,
             stations,
             station_id,
+            customer_id,
         } = this.state;
         return (
             <div className="row">
@@ -269,10 +299,19 @@ class Cart extends Component {
                             </form>
                         </div>
                         <div className="col">
-                            <select
-                                className="form-control"
+                            <Select
+                                ref={this.selectRef}
+                                options={[
+                                    { value: "", label: "Walk-in" },
+                                    ...customers.map((cus) => ({
+                                        value: cus.id,
+                                        label: `${cus.first_name} ${cus.last_name}`,
+                                    })),
+                                ]}
                                 onChange={this.setCustomerId}
-                            >
+                            />
+
+                            {/* <select className="form-control">
                                 <option value="">Walk-in Customer</option>
                                 {customers.map((cus) => (
                                     <option
@@ -280,7 +319,7 @@ class Cart extends Component {
                                         value={cus.id}
                                     >{`${cus.first_name} ${cus.last_name}`}</option>
                                 ))}
-                            </select>
+                            </select> */}
                         </div>
                     </div>
                     <div className="user-cart">

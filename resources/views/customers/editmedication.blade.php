@@ -21,6 +21,16 @@
                 <h4 id="daily" class="mb-2">Daily Summary</h4>
 
                 <div class="form-group">
+                    <label for="medicines">Medicines and IV Fluids</label>
+                    <textarea name="medicines" class="form-control @error('medicines') is-invalid @enderror" id="medicines">{{ old('medicines', $customer->medicines) }}</textarea>
+                    @error('medicines')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <label for="requested">Requested</label>
                     <input type="number" name="requested" class="form-control @error('requested') is-invalid @enderror"
                         id="requested" value="{{ old('requested', $customer->requested) }} "> 
@@ -135,19 +145,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="avatar">Picture</label>
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" name="avatar" id="avatar" readonly>
-                        <label class="custom-file-label" for="avatar">Choose file</label>
-                    </div>
-                    @error('avatar')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-
-                <div class="form-group">
                     <label for="avatar">is this patient discharged?</label>
                     <div class="form-check">
                         <label class="form-check-label">
@@ -176,16 +173,6 @@
         <div class="card">
             <div class="card-body">
                 <h4 id="doctor" class="mb-2">Doctor Order Sheet</h4>
-
-                <div class="form-group">
-                    <label for="medicines">Medicines and IV Fluids</label>
-                    <textarea name="medicines" class="form-control @error('medicines') is-invalid @enderror" id="medicines" readonly>{{ old('medicines', $customer->medicines) }}</textarea>
-                    @error('medicines')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
 
                 <div class="form-group">
                     <label for="doctor_name">Doctor Name</label>
