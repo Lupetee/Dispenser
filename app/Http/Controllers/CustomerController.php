@@ -15,15 +15,82 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+
         if (request()->wantsJson()) {
             return response(
                 Customer::all()
             );
         }
-        $customers = Customer::latest()->paginate(10);
-        return view('customers.index')->with('customers', $customers);
+        $customers = Customer::where(function ($query) use ($request) {
+            $query->when(!empty($request->query('query')), function ($query) use ($request) {
+                $queryString = $request->query('query');
+
+                $query->where('first_name', 'like', '%' . $queryString . '%')
+                    ->orWhere('id', 'like', '%' . $queryString . '%')
+                    ->orWhere('last_name', 'like', '%' . $queryString . '%')
+                    ->orWhere('room_number', 'like', '%' . $queryString . '%')
+                    ->orWhere('created_at', 'like', '%' . $queryString . '%');
+            });
+        })->latest()->paginate(10);
+        return view('customers.index')->with([
+            'customers' => $customers,
+            'query' => $request->query('query') ?? null,
+        ]);
+    }
+
+    public function medication(Request $request)
+    {
+    
+        if (request()->wantsJson()) {
+            return response(
+                Customer::all()
+            );
+        }
+        $customers = Customer::where(function ($query) use ($request) {
+            $query->when(!empty($request->query('query')), function ($query) use ($request) {
+                $queryString = $request->query('query');
+
+                $query->where('first_name', 'like', '%' . $queryString . '%')
+                    ->orWhere('id', 'like', '%' . $queryString . '%')
+                    ->orWhere('last_name', 'like', '%' . $queryString . '%')
+                    ->orWhere('medications', 'like', '%' . $queryString . '%')
+                    ->orWhere('restricted_drugs', 'like', '%' . $queryString . '%');
+            });
+        })->latest()->paginate(10);
+        return view('customers.medication')->with([
+            'customers' => $customers,
+            'query' => $request->query('query') ?? null,
+        ]);
+    }
+
+
+
+    public function getDischarged()
+    {
+
+        if (request()->wantsJson()) {
+            return response(
+                Customer::where('is_discharged', 1)->get()
+            );
+        }
+        $customers = Customer::where('is_discharged', 1)
+        // ->where(function ($query) use ($request) {
+        //     $query->when(!empty($request->query('query')), function ($query) use ($request) {
+        //         $queryString = $request->query('query');
+
+        //         $query->where('first_name', 'like', '%' . $queryString . '%')
+        //             ->orWhere('id', 'like', '%' . $queryString . '%')
+        //             ->orWhere('last_name', 'like', '%' . $queryString . '%')
+        //             ->orWhere('room_number', 'like', '%' . $queryString . '%')
+        //             ->orWhere('created_at', 'like', '%' . $queryString . '%');
+        //     });
+        // })
+        ->latest()->paginate(10);
+        return view('medical-history.index')->with([
+            'customers' => $customers,
+        ]);
     }
 
     /**
@@ -93,15 +160,74 @@ class CustomerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
+     * 
+     * 
      */
+    public function updatemedication(Request $request, Customer $customer)
+    {   
+        $customer->medicines_fluids = $request->medicines_fluids;
+        $customer->requested = $request->requested;
+        $customer->dispensed = $request->dispensed;
+        $customer->pharmacist_duty = $request->pharmacist_duty;
+        $customer->nurse_duty = $request->nurse_duty;
+        $customer->daily_remarks = $request->daily_remarks;
+
+        if ($request->hasFile('avatar')) {
+            // Delete old avatar
+            if ($customer->avatar) {
+                Storage::delete($customer->avatar);
+            }
+            // Store avatar
+            $avatar_path = $request->file('avatar')->store('customers', 'public');
+            // Save to Database
+            $customer->avatar = $avatar_path;
+
+         }
+         if (!$customer->save()) {
+            return redirect()->back()->with('error', 'Sorry, Something went wrong while updating the customer.');
+        }
+        return redirect()->route('customers.medication')->with('success', 'Success, The customer has been updated.');
+        }
+
+    public function editmedication(Request $request, Customer $customer)
+    {
+            return view('customers.editmedication', compact('customer'));
+    }
+
     public function update(Request $request, Customer $customer)
     {
+        $customer->medicines_fluids = $request->medicines_fluids;
+        $customer->requested = $request->requested;
+        $customer->dispensed = $request->dispensed;
+        $customer->pharmacist_duty = $request->pharmacist_duty;
+        $customer->nurse_duty = $request->nurse_duty;
+        $customer->daily_remarks = $request->daily_remarks;
+
         $customer->first_name = $request->first_name;
         $customer->last_name = $request->last_name;
+        $customer->nickname = $request->nickname;
+        $customer->philhealth = $request->philhealth;
+        $customer->sex = $request->sex;
+        $customer->emergency = $request->emergency;
+        $customer->date_of_birth = $request->date_of_birth;
+        $customer->marital_status = $request->marital_status;
         $customer->room_number = $request->room_number;
         $customer->email = $request->email;
         $customer->phone = $request->phone;
         $customer->address = $request->address;
+
+        $customer->medicines = $request->medicines;
+        $customer->name_of_nurse = $request->name_of_nurse;
+        $customer->progress_notes = $request->progress_notes;
+        $customer->doctors_order = $request->doctors_order;
+        $customer->remarks = $request->remarks;
+        $customer->prepared_by = $request->prepared_by;
+        $customer->medical_history = $request->medical_history;
+        $customer->medications = $request->medications;
+        $customer->restricted_drugs = $request->restricted_drugs;
+
+        $customer->doctor_name = $request->doctor_name;
+        $customer->is_discharged = $request->is_discharged;
 
         if ($request->hasFile('avatar')) {
             // Delete old avatar

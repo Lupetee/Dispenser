@@ -1,16 +1,16 @@
 <?php return array (
   'app' => 
   array (
-    'name' => 'LaravelPOS',
+    'name' => 'Laravel',
     'env' => 'local',
     'debug' => true,
-    'url' => 'http://127.0.0.1:8000',
+    'url' => 'http://dispenser.test',
     'asset_url' => NULL,
     'timezone' => 'UTC',
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:TsCXhnI8Ws9JyV+l837xYwHHsnszNMhsOpm9GMw0+f4=',
+    'key' => 'base64:m9yzEMUn27NqomjafYn6M8kcJ6bDao6SD8/LKzWEZlE=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -124,18 +124,18 @@
   ),
   'broadcasting' => 
   array (
-    'default' => 'log',
+    'default' => 'pusher',
     'connections' => 
     array (
       'pusher' => 
       array (
         'driver' => 'pusher',
-        'key' => '',
-        'secret' => '',
-        'app_id' => '',
+        'key' => 'bfefdaa10969644c47ca',
+        'secret' => '17855945d70befa4515e',
+        'app_id' => '1570747',
         'options' => 
         array (
-          'cluster' => 'mt1',
+          'cluster' => 'ap1',
           'useTLS' => true,
         ),
       ),
@@ -216,7 +216,7 @@
         'endpoint' => NULL,
       ),
     ),
-    'prefix' => 'laravelpos_cache',
+    'prefix' => 'laravel_cache',
   ),
   'cors' => 
   array (
@@ -314,7 +314,7 @@
       'options' => 
       array (
         'cluster' => 'redis',
-        'prefix' => 'laravelpos_database_',
+        'prefix' => 'laravel_database_',
       ),
       'default' => 
       array (
@@ -349,7 +349,7 @@
       array (
         'driver' => 'local',
         'root' => 'C:\\xampp\\htdocs\\Dispenser\\storage\\app/public',
-        'url' => 'http://127.0.0.1:8000/storage',
+        'url' => 'http://dispenser.test/storage',
         'visibility' => 'public',
       ),
       's3' => 
@@ -504,7 +504,7 @@
     'from' => 
     array (
       'address' => NULL,
-      'name' => 'LaravelPOS',
+      'name' => 'Laravel',
     ),
     'markdown' => 
     array (
@@ -599,7 +599,7 @@
       0 => 2,
       1 => 100,
     ),
-    'cookie' => 'laravelpos_session',
+    'cookie' => 'laravel_session',
     'path' => '/',
     'domain' => NULL,
     'secure' => NULL,
@@ -691,6 +691,7 @@
         ),
         'hints' => false,
         'show_copy' => false,
+        'slow_threshold' => false,
       ),
       'mail' => 
       array (
@@ -700,6 +701,9 @@
       array (
         'timeline' => false,
         'data' => false,
+        'exclude_paths' => 
+        array (
+        ),
       ),
       'route' => 
       array (
@@ -719,6 +723,53 @@
     'route_domain' => NULL,
     'theme' => 'auto',
     'debug_backtrace_limit' => 50,
+  ),
+  'dompdf' => 
+  array (
+    'show_warnings' => false,
+    'public_path' => NULL,
+    'convert_entities' => true,
+    'options' => 
+    array (
+      'font_dir' => 'C:\\xampp\\htdocs\\Dispenser\\storage\\fonts',
+      'font_cache' => 'C:\\xampp\\htdocs\\Dispenser\\storage\\fonts',
+      'temp_dir' => 'C:\\Users\\ericj\\AppData\\Local\\Temp',
+      'chroot' => 'C:\\xampp\\htdocs\\Dispenser',
+      'allowed_protocols' => 
+      array (
+        'file://' => 
+        array (
+          'rules' => 
+          array (
+          ),
+        ),
+        'http://' => 
+        array (
+          'rules' => 
+          array (
+          ),
+        ),
+        'https://' => 
+        array (
+          'rules' => 
+          array (
+          ),
+        ),
+      ),
+      'log_output_file' => NULL,
+      'enable_font_subsetting' => false,
+      'pdf_backend' => 'CPDF',
+      'default_media_type' => 'screen',
+      'default_paper_size' => 'a4',
+      'default_paper_orientation' => 'portrait',
+      'default_font' => 'serif',
+      'dpi' => 96,
+      'enable_php' => false,
+      'enable_javascript' => true,
+      'enable_remote' => true,
+      'font_height_ratio' => 1.1,
+      'enable_html5_parser' => true,
+    ),
   ),
   'flare' => 
   array (
@@ -749,6 +800,7 @@
         'censor_fields' => 
         array (
           0 => 'password',
+          1 => 'password_confirmation',
         ),
       ),
       'Spatie\\FlareClient\\FlareMiddleware\\CensorRequestHeaders' => 
@@ -783,17 +835,26 @@
       11 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\MissingColumnSolutionProvider',
       12 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\UnknownValidationSolutionProvider',
       13 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\MissingMixManifestSolutionProvider',
-      14 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\MissingLivewireComponentSolutionProvider',
-      15 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\UndefinedViewVariableSolutionProvider',
-      16 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\GenericLaravelExceptionSolutionProvider',
+      14 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\MissingViteManifestSolutionProvider',
+      15 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\MissingLivewireComponentSolutionProvider',
+      16 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\UndefinedViewVariableSolutionProvider',
+      17 => 'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\GenericLaravelExceptionSolutionProvider',
     ),
     'ignored_solution_providers' => 
     array (
     ),
-    'enable_runnable_solutions' => true,
+    'enable_runnable_solutions' => NULL,
     'remote_sites_path' => 'C:\\xampp\\htdocs\\Dispenser',
     'local_sites_path' => '',
     'housekeeping_endpoint_prefix' => '_ignition',
+    'settings_file_path' => '',
+    'recorders' => 
+    array (
+      0 => 'Spatie\\LaravelIgnition\\Recorders\\DumpRecorder\\DumpRecorder',
+      1 => 'Spatie\\LaravelIgnition\\Recorders\\JobRecorder\\JobRecorder',
+      2 => 'Spatie\\LaravelIgnition\\Recorders\\LogRecorder\\LogRecorder',
+      3 => 'Spatie\\LaravelIgnition\\Recorders\\QueryRecorder\\QueryRecorder',
+    ),
   ),
   'tinker' => 
   array (

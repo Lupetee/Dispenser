@@ -5,34 +5,58 @@ namespace App\Http\Controllers;
 use App\Http\Requests\OrderStoreRequest;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 
 class OrderController extends Controller
 {
-    public function index(Request $request) {
+
+    public function getOrderCount()
+    {
+        return response([
+            'count' => Order::count(),
+        ]);
+    }
+
+    public function index(Request $request)
+    {
         $orders = new Order();
-        if($request->start_date) {
+        if ($request->start_date) {
             $orders = $orders->where('created_at', '>=', $request->start_date);
         }
-        if($request->end_date) {
+        if ($request->end_date) {
             $orders = $orders->where('created_at', '<=', $request->end_date . ' 23:59:59');
         }
-        $orders = $orders->with(['items', 'payments', 'customer'])->latest()->paginate(10);
+        $station = $request->query('station') ?? 1;
 
-        $total = $orders->map(function($i) {
+
+        $orders = $orders->where('station_id', '=', $station)
+            ->with(['items', 'payments', 'customer'])
+            ->latest()
+            ->paginate(10);
+
+        $total = $orders->map(function ($i) {
             return $i->total();
         })->sum();
-        $receivedAmount = $orders->map(function($i) {
+        $receivedAmount = $orders->map(function ($i) {
             return $i->receivedAmount();
         })->sum();
 
-        return view('orders.index', compact('orders', 'total', 'receivedAmount'));
+        return view('orders.index', compact([
+            'orders',
+            'total',
+            'receivedAmount',
+            'station',
+        ]));
     }
 
     public function store(OrderStoreRequest $request)
     {
+
         $order = Order::create([
             'customer_id' => $request->customer_id,
             'user_id' => $request->user()->id,
+            'station_id' => $request->station_id,
         ]);
 
         $cart = $request->user()->cart()->get();
@@ -51,5 +75,17 @@ class OrderController extends Controller
             'user_id' => $request->user()->id,
         ]);
         return 'success';
+    }
+
+    public function viewReceipt(Order $order)
+    {
+        $order->load([
+            'customer',
+            'items',
+            'items.product',
+        ]);
+
+        $pdf = Pdf::loadView('pdf.invoice', compact('order'));
+        return $pdf->stream();
     }
 }

@@ -22,11 +22,29 @@ class ProductController extends Controller
         if ($request->search) {
             $products = $products->where('name', 'LIKE', "%{$request->search}%");
         }
-        $products = $products->latest()->paginate(10);
+
+        $products = $products->where(function ($query) use ($request) {
+            $query->when(!empty($request->query('query')), function ($query) use ($request) {
+                $queryString = $request->query('query');
+
+                $query->where('name', 'like', '%' . $queryString . '%')
+                    ->orWhere('description', 'like', '%' . $queryString . '%')
+                    ->orWhere('barcode', 'like', '%' . $queryString . '%')
+                    ->orWhere('price', 'like', '%' . $queryString . '%')
+                    ->orWhere('status', 'like', '%' . $queryString . '%')
+                    ->orWhere('created_at', 'like', '%' . $queryString . '%')
+                    ->orWhere('updated_at', 'like', '%' . $queryString . '%')
+                    ->orWhere('quantity', 'like', '%' . $queryString . '%');
+            });
+        })->latest()->paginate(10);
+
         if (request()->wantsJson()) {
             return ProductResource::collection($products);
         }
-        return view('products.index')->with('products', $products);
+        return view('products.index')->with([
+            'products' => $products,
+            'query' => $request->query('query') ?? null,
+        ]);
     }
 
     /**
@@ -60,6 +78,7 @@ class ProductController extends Controller
             'barcode' => $request->barcode,
             'price' => $request->price,
             'quantity' => $request->quantity,
+            'dosage' => $request->dosage,
             'status' => $request->status
         ]);
 
@@ -106,6 +125,13 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->quantity = $request->quantity;
         $product->status = $request->status;
+        $product->dosage = $request->dosage;
+
+        if ($product->isDirty('quantity')) {
+            if ($product->quantity == 0) {
+                $product->status = 0;
+            }
+        }
 
         if ($request->hasFile('image')) {
             // Delete old image

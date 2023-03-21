@@ -8,6 +8,7 @@ class Order extends Model
 {
     protected $fillable = [
         'customer_id',
+        'station_id',
         'user_id'
     ];
 
@@ -31,7 +32,7 @@ class Order extends Model
         if($this->customer) {
             return $this->customer->first_name . ' ' . $this->customer->last_name;
         }
-        return 'Working Customer';
+        return 'Walk-in Customer';
     }
 
     public function total()
