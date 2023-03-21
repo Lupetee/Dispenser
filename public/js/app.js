@@ -17822,7 +17822,7 @@ var Cart = /*#__PURE__*/function (_Component) {
     value: function handleClickSubmit() {
       var _this8 = this;
       sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
-        html: "\n            <ul class=\"list-group\">\n                <li class=\"list-group-item text-left\">Patient Name: ".concat(this.state.patient.name, "</li>\n                <li class=\"list-group-item text-left\">Bed#: ").concat(this.state.patient.bed_number, "</li>\n                <li class=\"list-group-item text-left\">Doctor's Name: ").concat(this.state.patient.doctor, "</li>\n                <li class=\"list-group-item text-left\">Nurse: ").concat(this.state.patient.nurse, "</li>\n                <li class=\"list-group-item text-left\">Station Number: ").concat(this.state.station_id, "</li>\n            </u>"),
+        html: "\n            <ul class=\"list-group\">\n                <li class=\"list-group-item text-left\">Patient Name: ".concat(this.state.patient.name, "</li>\n                <li class=\"list-group-item text-left\">Room #: ").concat(this.state.patient.bed_number, "</li>\n                <li class=\"list-group-item text-left\">Doctor's Name: ").concat(this.state.patient.doctor, "</li>\n                <li class=\"list-group-item text-left\">Nurse: ").concat(this.state.patient.nurse, "</li>\n                <li class=\"list-group-item text-left\">Station Number: ").concat(this.state.station_id, "</li>\n            </u>"),
         showCancelButton: true,
         confirmButtonText: "Send",
         showLoaderOnConfirm: true,
@@ -17917,10 +17917,10 @@ var Cart = /*#__PURE__*/function (_Component) {
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
                     children: patient.name
                   })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("tr", {
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("tr", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
                     children: "Room #:"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("td", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
                     children: patient.bed_number
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("tr", {

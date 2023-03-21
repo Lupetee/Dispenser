@@ -31,7 +31,7 @@
             </div>
             @endif
 
-            @if(Auth::user()->roles=='Nurse')
+            @if(Auth::user()->roles=='nurse')
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">To</label>
                 <select name="to" class="form-control @error('to') is-invalid @enderror" aria-label="select example">
