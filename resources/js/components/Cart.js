@@ -235,7 +235,7 @@ class Cart extends Component {
             html: `
             <ul class="list-group">
                 <li class="list-group-item text-left">Patient Name: ${this.state.patient.name}</li>
-                <li class="list-group-item text-left">Bed#: ${this.state.patient.bed_number}</li>
+                <li class="list-group-item text-left">Room #: ${this.state.patient.bed_number}</li>
                 <li class="list-group-item text-left">Doctor's Name: ${this.state.patient.doctor}</li>
                 <li class="list-group-item text-left">Nurse: ${this.state.patient.nurse}</li>
                 <li class="list-group-item text-left">Station Number: ${this.state.station_id}</li>
@@ -333,7 +333,7 @@ class Cart extends Component {
                                     <td>{patient.name}</td>
                                 </tr>
                                 <tr>
-                                    <td>Bed#:</td>
+                                    <td>Room #:</td>
                                     <td>{patient.bed_number}</td>
                                 </tr>
                                 <tr>
