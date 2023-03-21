@@ -49,7 +49,8 @@
                                         class="fas fa-edit"></i></a>
                                 <button class="btn btn-danger btn-delete"
                                     data-url="{{ route('customers.destroy', $customer) }}"><i
-                                        class="fas fa-box-archive"></i></button>
+                                        class="fa-solid fa-box-archive"></i></button>
+                                        
                             </td>
                         </tr>
                     @endforeach

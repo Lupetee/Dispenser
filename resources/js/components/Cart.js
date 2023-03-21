@@ -333,7 +333,7 @@ class Cart extends Component {
                                     <td>{patient.name}</td>
                                 </tr>
                                 <tr>
-                                    <td>Bed#:</td>
+                                    <td>Room #:</td>
                                     <td>{patient.bed_number}</td>
                                 </tr>
                                 <tr>

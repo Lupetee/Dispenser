@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Create Customer')
-@section('content-header', 'Create Customer')
+@section('title', 'Add New Patient')
+@section('content-header', 'Add New Patient')
 
 @section('content')
 
@@ -36,6 +36,17 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="nickname">Nickname</label>
+                    <input type="text" name="nickname" class="form-control @error('nickname') is-invalid @enderror"
+                        id="nickname" placeholder="Nick Name" value="{{ old('nickname') }}">
+                    @error('nickname')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <label for="email">Email</label>
                     <input type="text" name="email" class="form-control @error('email') is-invalid @enderror" id="email"
                            placeholder="Email" value="{{ old('email') }}">
@@ -43,6 +54,50 @@
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="date_of_birth">Date of Birth</label>
+                    <input type="date" name="date_of_birth" class="form-control @error('date_of_birth') is-invalid @enderror"
+                        id="date_of_birth" placeholder="Date of Birth" value="{{ old('date_of_birth') }}">
+                    @error('date_of_birth')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+        
+                <div class="form-group">
+                    <label for="philhealth">Philhealth</label>
+                    <input type="text" name="philhealth" class="form-control @error('philhealth') is-invalid @enderror"
+                        id="philhealth" placeholder="Philhealth" value="{{ old('philhealth') }}">
+                    @error('philhealth')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+        
+                <div class="form-group">
+                    <label for="sex">Sex</label>
+                    <input type="text" name="sex" class="form-control @error('sex') is-invalid @enderror"
+                        id="sex" placeholder="Sex" value="{{ old('sex') }}">
+                    @error('sex')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+        
+                <div class="form-group">
+                    <label for="marital_status">Marital Status</label>
+                    <input type="text" name="marital_status" class="form-control @error('marital_status') is-invalid @enderror"
+                        id="marital_status" placeholder="Marital Status" value="{{ old('marital_status') }}">
+                    @error('marital_status')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                     @enderror
                 </div>
 
@@ -69,14 +124,25 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="address">Address</label>
+                    <label for="address">Address (Street, Brgy., Municipality, Province, District, Region, Zip
+                        Code)</label>
                     <input type="text" name="address" class="form-control @error('address') is-invalid @enderror"
-                           id="address"
-                           placeholder="Address" value="{{ old('address') }}">
+                        id="address" placeholder="Address" value="{{ old('address') }}">
                     @error('address')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="emergency">In case of emergency, who should be notified?</label>
+                    <input type="text" name="emergency" class="form-control @error('emergency') is-invalid @enderror"
+                        id="emergency" placeholder=" " value="{{ old('emergency') }}">
+                    @error('emergency')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                     @enderror
                 </div>
 

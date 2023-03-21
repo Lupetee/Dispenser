@@ -120,6 +120,7 @@ class CustomerController extends Controller
         $customer = Customer::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
+            'nickname' => $request->nickname,
             'email' => $request->email,
             'phone' => $request->phone,
             'address' => $request->address,
