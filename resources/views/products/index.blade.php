@@ -19,7 +19,7 @@
         <form action="{{ route('products.index') }}" method="GET">
             <div class="d-flex w-100">
                 <input value="{{ $query }}" class="form-control w-100" name="query" type="search"
-                    placeholder="Search" aria-label="Search">
+                    placeholder="Search Product Code / Name of Drug" aria-label="Search">
 
                 <input class="btn btn-outline-success" type="submit"Search />
             </div>
@@ -46,7 +46,7 @@
                 <tbody>
                     @foreach ($products as $product)
                         <tr>
-                            <td>{{ $product->id }}</td>
+                            <td>{{ $product->barcode }}</td>
                             <td>{{ $product->name }}</td>
                             <td>{{ $product->dosage }}</td>
                             <td>{{ $product->quantity }}</td>
@@ -66,7 +66,19 @@
                                         data-url="{{ route('products.destroy', $product) }}"><i
                                             class="fas fa-trash"></i></button>
                                 </td>
+                                
                             @endif
+
+                            @if (Auth::user()->roles == 'admin')
+                            <td>
+                                <a href="{{ route('products.edit', $product) }}" class="btn btn-primary"><i
+                                        class="fas fa-edit"></i></a>
+                                <button class="btn btn-danger btn-delete"
+                                    data-url="{{ route('products.destroy', $product) }}"><i
+                                        class="fas fa-trash"></i></button>
+                            </td>
+                            
+                        @endif
                         </tr>
                     @endforeach
                 </tbody>

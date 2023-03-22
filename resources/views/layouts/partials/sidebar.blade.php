@@ -81,6 +81,12 @@
                     </a>
                 </li>
                 <li class="nav-item has-treeview">
+                    <a href="{{ route('orders.index') }}" class="nav-link {{ activeSegment('orders') }}">
+                        <i class="nav-icon fas fa-chart-line"></i>
+                        <p>Order History</p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
                     <a href="{{ route('messages.index') }}" class="nav-link {{ activeSegment('messages') }}">
                         <i class="nav-icon fas fa-envelope"></i>
                         <p>Message</p>

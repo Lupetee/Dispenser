@@ -58,6 +58,19 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="image">Product Image</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="image" id="image value="{{ old('image', $product->image) }}">
+                        <label class="custom-file-label" for="image">Choose File</label>
+                    </div>
+                    @error('image')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <label for="quantity">Quantity</label>
                     <input type="text" name="quantity" class="form-control @error('quantity') is-invalid @enderror"
                         id="quantity" placeholder="Quantity" value="{{ old('quantity', $product->quantity) }}">
