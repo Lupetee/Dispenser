@@ -11,7 +11,6 @@
             <ol class="breadcrumb">
 
                 <li class="breadcrumb-item "><a href="#info">Patient Info</a></li>
-                <li class="breadcrumb-item "><a href="#doctor">Doctor Order Sheet</a></li>
                 <li class="breadcrumb-item "><a href="#history">Medical History</a></li>
             </ol>
         </nav>
@@ -23,7 +22,7 @@
                 <div class="form-group">
                     <label for="first_name">First Name</label>
                     <input type="text" name="first_name" class="form-control @error('first_name') is-invalid @enderror"
-                        id="first_name" placeholder="First Name" value="{{ old('first_name', $customer->first_name) }}"readonly>
+                        id="first_name" placeholder="First Name" value="{{ old('first_name', $customer->first_name) }}">
                     @error('first_name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -34,7 +33,7 @@
                 <div class="form-group">
                     <label for="last_name">Last Name</label>
                     <input type="text" name="last_name" class="form-control @error('last_name') is-invalid @enderror"
-                        id="last_name" placeholder="Last Name" value="{{ old('last_name', $customer->last_name) }}"readonly>
+                        id="last_name" placeholder="Last Name" value="{{ old('last_name', $customer->last_name) }}">
                     @error('last_name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -45,7 +44,7 @@
                 <div class="form-group">
                     <label for="nickname">Nickname</label>
                     <input type="text" name="nickname" class="form-control @error('nickname') is-invalid @enderror"
-                        id="nickname" placeholder="Nick Name" value="{{ old('nickname', $customer->nickname) }}"readonly>
+                        id="nickname" placeholder="Nick Name" value="{{ old('nickname', $customer->nickname) }}">
                     @error('nickname')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -56,7 +55,7 @@
                 <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="text" name="email" class="form-control @error('email') is-invalid @enderror"
-                        id="email" placeholder="Email Address" value="{{ old('email', $customer->email) }}"readonly>
+                        id="email" placeholder="Email Address" value="{{ old('email', $customer->email) }}">
                     @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -78,7 +77,7 @@
                 <div class="form-group">
                     <label for="date_of_birth">Date of Birth</label>
                     <input type="date" name="date_of_birth" class="form-control @error('date_of_birth') is-invalid @enderror"
-                        id="date_of_birth" placeholder="Date of Birth" value="{{ old('date_of_birth', $customer->date_of_birth) }}"readonly>
+                        id="date_of_birth" placeholder="Date of Birth" value="{{ old('date_of_birth', $customer->date_of_birth) }}">
                     @error('date_of_birth')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -89,7 +88,7 @@
                 <div class="form-group">
                     <label for="philhealth">Philhealth</label>
                     <input type="text" name="philhealth" class="form-control @error('philhealth') is-invalid @enderror"
-                        id="philhealth" placeholder="Philhealth" value="{{ old('philhealth', $customer->philhealth) }}"readonly>
+                        id="philhealth" placeholder="Philhealth" value="{{ old('philhealth', $customer->philhealth) }}">
                     @error('philhealth')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -100,7 +99,7 @@
                 <div class="form-group">
                     <label for="sex">Sex</label>
                     <input type="text" name="sex" class="form-control @error('sex') is-invalid @enderror"
-                        id="sex" placeholder="Sex" value="{{ old('sex', $customer->sex) }}"readonly>
+                        id="sex" placeholder="Sex" value="{{ old('sex', $customer->sex) }}">
                     @error('sex')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -111,7 +110,7 @@
                 <div class="form-group">
                     <label for="marital_status">Marital Status</label>
                     <input type="text" name="marital_status" class="form-control @error('marital_status') is-invalid @enderror"
-                        id="marital_status" placeholder="Marital Status" value="{{ old('marital_status', $customer->marital_status) }}"readonly>
+                        id="marital_status" placeholder="Marital Status" value="{{ old('marital_status', $customer->marital_status) }}">
                     @error('marital_status')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -122,7 +121,7 @@
                 <div class="form-group">
                     <label for="phone">Phone</label>
                     <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror"
-                        id="phone" placeholder="Phone" value="{{ old('phone', $customer->phone) }}"readonly>
+                        id="phone" placeholder="Phone" value="{{ old('phone', $customer->phone) }}">
                     @error('phone')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -134,7 +133,7 @@
                     <label for="address">Address (Street, Brgy., Municipality, Province, District, Region, Zip
                         Code)</label>
                     <input type="text" name="address" class="form-control @error('address') is-invalid @enderror"
-                        id="address" placeholder="Address" value="{{ old('address', $customer->address) }}"readonly>
+                        id="address" placeholder="Address" value="{{ old('address', $customer->address) }}">
                     @error('address')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -145,7 +144,7 @@
                 <div class="form-group">
                     <label for="emergency">In case of emergency, who should be notified?</label>
                     <input type="text" name="emergency" class="form-control @error('emergency') is-invalid @enderror"
-                        id="emergency" placeholder="Marital Status" value="{{ old('emergency', $customer->emergency) }}"readonly>
+                        id="emergency" placeholder="Marital Status" value="{{ old('emergency', $customer->emergency) }}">
                     @error('emergency')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -176,93 +175,8 @@
                 @enderror
             </div>
 
-
-
         </div>
-        <div class="card">
-            <div class="card-body">
-                <h4 id="doctor" class="mb-2">Doctor Order Sheet</h4>
-
-                <div class="form-group">
-                    <label for="medicines">Medicines and IV Fluids</label>
-                    <textarea name="medicines" class="form-control @error('medicines') is-invalid @enderror" id="medicines">{{ old('medicines', $customer->medicines) }}</textarea>
-                    @error('medicines')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-
-                <div class="form-group">
-                    <label for="doctor_name">Doctor Name</label>
-                    <input type="text" name="doctor_name"
-                        class="form-control @error('doctor_name') is-invalid @enderror" id="doctor_name"
-                        placeholder="Doctor Name" value="{{ old('doctor_name', $customer->doctor_name) }}">
-                    @error('doctor_name')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-
-                <div class="form-group">
-                    <label for="name_of_nurse">Nurse Name</label>
-                    <input type="text" name="name_of_nurse"
-                        class="form-control @error('name_of_nurse') is-invalid @enderror" id="name_of_nurse"
-                        placeholder="Nurse Name" value="{{ old('name_of_nurse', $customer->name_of_nurse) }}">
-                    @error('name_of_nurse')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-
-                <div class="form-group">
-                    <label for="medicines">Progress Notes</label>
-                    <textarea name="progress_notes" class="form-control @error('progress_notes') is-invalid @enderror"
-                        id="progress_notes"> {{ old('progress_notes', $customer->progress_notes) }} </textarea>
-                    @error('progress_notes')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-
-                <div class="form-group">
-                    <label for="doctors_order">Doctor's Order</label>
-                    <textarea name="doctors_order" class="form-control @error('doctors_order') is-invalid @enderror" id="doctors_order"> {{ old('doctors_order', $customer->doctors_order) }} </textarea>
-                    @error('doctors_order')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-
-                <div class="form-group">
-                    <label for="remarks">Remarks</label>
-                    <input type="text" name="remarks" class="form-control @error('remarks') is-invalid @enderror"
-                        id="remarks" placeholder="Remarks" value="{{ old('remarks', $customer->remarks) }}">
-                    @error('remarks')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-
-                <div class="form-group">
-                    <label for="prepared_by">Prepared by</label>
-                    <input type="text" name="prepared_by"
-                        class="form-control @error('prepared_by') is-invalid @enderror" id="prepared_by"
-                        placeholder="Prepared by" value="{{ old('prepared_by', $customer->prepared_by) }}">
-                    @error('prepared_by')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-            </div>
-        </div>
-
+        
         <div class="card">
             <div class="card-body">
                 <h4 id="history" class="mb-2">Medical History</h4>
