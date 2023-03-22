@@ -4,6 +4,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DoctorOrderSheetController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MedicationController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\NonRestrictedController;
 use App\Http\Controllers\OrderController;
@@ -44,6 +45,10 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::delete('/cart/empty', [CartController::class, 'empty']);
 
     Route::resource('messages', MessageController::class);
+
+    Route::resource('medication', MedicationController::class);
+    Route::get('medication/{medication}/replicate', [MedicationController::class, 'editreplicate'])->name('medication.editreplicate');
+    Route::put('medication.replicate', [MedicationController::class, 'replicate'])->name('medication.replicate');
 
     Route::resource('restricted', RestrictedController::class);
     Route::get('restricted/{restricted}/replicate', [RestrictedController::class, 'editreplicate'])->name('restricted.editreplicate');

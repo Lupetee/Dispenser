@@ -47,7 +47,7 @@
                             <i class="nav-icon fas fa-users"></i>
                             <p>Doctor's Order Sheet</p>
                         </a>
-                        <a href="{{ route('customers.medication') }}" class="nav-link {{ activeSegment('customers.medication') }}">
+                        <a href="{{ route('medication.index') }}" class="nav-link {{ activeSegment('medication') }}">
                             <i class="nav-icon fas fa-users"></i>
                             <p>24 Hr Medication</p>
                         </a>
@@ -125,7 +125,7 @@
                             <i class="nav-icon fas fa-users"></i>
                             <p>Doctor's Order Sheet</p>
                         </a>
-                        <a href="{{ route('customers.medication') }}" class="nav-link {{ activeSegment('customers.medication') }}">
+                        <a href="{{ route('medication.index') }}" class="nav-link {{ activeSegment('medication.index') }}">
                             <i class="nav-icon fas fa-users"></i>
                             <p>24 Hr Medication</p>
                         </a>

@@ -142,7 +142,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::q9I0YmyJ4Cx8ely4',
+            '_route' => 'generated::FRfleZ0Exd0ukMnl',
           ),
           1 => NULL,
           2 => 
@@ -162,7 +162,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::O6gxA6A4S7MAM8vV',
+            '_route' => 'generated::zEXMTw8hvwl7QIQj',
           ),
           1 => NULL,
           2 => 
@@ -219,7 +219,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::WdwitXiQ3axQPjC4',
+            '_route' => 'generated::ckfxJBFobHug6opE',
           ),
           1 => NULL,
           2 => 
@@ -274,7 +274,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::qrNLexGg4wfRWB9w',
+            '_route' => 'generated::szdv0E90F2BKwrLz',
           ),
           1 => NULL,
           2 => 
@@ -365,7 +365,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::KmxVyb3BaADsYF6V',
+            '_route' => 'generated::JshImhx3YmZhjG0J',
           ),
           1 => NULL,
           2 => 
@@ -703,7 +703,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::QYSo28TOFV5BlrMT',
+            '_route' => 'generated::vKnpYOZ3I3ScO6ZF',
           ),
           1 => NULL,
           2 => 
@@ -722,7 +722,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::u3dOhVe4wVsrkYYI',
+            '_route' => 'generated::pHjGA03BmqoN5fSB',
           ),
           1 => NULL,
           2 => 
@@ -741,7 +741,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::HoS8Wb2l7td10Ecq',
+            '_route' => 'generated::jRSwWrd8phbIuFAB',
           ),
           1 => NULL,
           2 => 
@@ -803,6 +803,81 @@ app('router')->setCompiledRoutes(
           array (
             'GET' => 0,
             'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/medication' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'medication.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'medication.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/medication/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'medication.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/medication.replicate' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'medication.replicate',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'PUT' => 0,
           ),
           3 => NULL,
           4 => false,
@@ -1038,7 +1113,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/_debugbar/c(?|lockwork/([^/]++)(*:39)|ache/([^/]++)(?:/([^/]++))?(*:73))|/password/reset/([^/]++)(*:105)|/admin/(?|products/([^/]++)(?|(*:143)|/edit(*:156)|(*:164))|customers/([^/]++)(?|(*:194)|/edit(?|(*:210)|medication(*:228))|(*:237))|order(?|s/([^/]++)(?|(*:267)|/edit(*:280)|(*:288))|\\-receipt/([^/]++)(*:315))|messages/([^/]++)(?|(*:344)|/edit(*:357)|(*:365))|restricted/([^/]++)(?|(*:396)|/(?|edit(*:412)|replicate(*:429))|(*:438))|nonrestricted/([^/]++)(?|(*:472)|/(?|edit(*:488)|replicate(*:505))|(*:514))|doctorsordersheet/([^/]++)(?|(*:552)|/(?|edit(*:568)|replicate(*:585))|(*:594))))/?$}sDu',
+      0 => '{^(?|/_debugbar/c(?|lockwork/([^/]++)(*:39)|ache/([^/]++)(?:/([^/]++))?(*:73))|/password/reset/([^/]++)(*:105)|/admin/(?|products/([^/]++)(?|(*:143)|/edit(*:156)|(*:164))|customers/([^/]++)(?|(*:194)|/edit(?|(*:210)|medication(*:228))|(*:237))|order(?|s/([^/]++)(?|(*:267)|/edit(*:280)|(*:288))|\\-receipt/([^/]++)(*:315))|me(?|ssages/([^/]++)(?|(*:347)|/edit(*:360)|(*:368))|dication/([^/]++)(?|(*:397)|/(?|edit(*:413)|replicate(*:430))|(*:439)))|restricted/([^/]++)(?|(*:471)|/(?|edit(*:487)|replicate(*:504))|(*:513))|nonrestricted/([^/]++)(?|(*:547)|/(?|edit(*:563)|replicate(*:580))|(*:589))|doctorsordersheet/([^/]++)(?|(*:627)|/(?|edit(*:643)|replicate(*:660))|(*:669))))/?$}sDu',
     ),
     3 => 
     array (
@@ -1422,7 +1497,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      344 => 
+      347 => 
       array (
         0 => 
         array (
@@ -1445,7 +1520,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      357 => 
+      360 => 
       array (
         0 => 
         array (
@@ -1468,7 +1543,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      365 => 
+      368 => 
       array (
         0 => 
         array (
@@ -1510,7 +1585,118 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      396 => 
+      397 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'medication.show',
+          ),
+          1 => 
+          array (
+            0 => 'medication',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      413 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'medication.edit',
+          ),
+          1 => 
+          array (
+            0 => 'medication',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      430 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'medication.editreplicate',
+          ),
+          1 => 
+          array (
+            0 => 'medication',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      439 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'medication.update',
+          ),
+          1 => 
+          array (
+            0 => 'medication',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'medication.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'medication',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      471 => 
       array (
         0 => 
         array (
@@ -1533,7 +1719,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      412 => 
+      487 => 
       array (
         0 => 
         array (
@@ -1556,7 +1742,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      429 => 
+      504 => 
       array (
         0 => 
         array (
@@ -1579,7 +1765,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      438 => 
+      513 => 
       array (
         0 => 
         array (
@@ -1621,7 +1807,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      472 => 
+      547 => 
       array (
         0 => 
         array (
@@ -1644,7 +1830,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      488 => 
+      563 => 
       array (
         0 => 
         array (
@@ -1667,7 +1853,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      505 => 
+      580 => 
       array (
         0 => 
         array (
@@ -1690,7 +1876,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      514 => 
+      589 => 
       array (
         0 => 
         array (
@@ -1732,7 +1918,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      552 => 
+      627 => 
       array (
         0 => 
         array (
@@ -1755,7 +1941,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      568 => 
+      643 => 
       array (
         0 => 
         array (
@@ -1778,7 +1964,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      585 => 
+      660 => 
       array (
         0 => 
         array (
@@ -1801,7 +1987,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      594 => 
+      669 => 
       array (
         0 => 
         array (
@@ -2156,7 +2342,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::q9I0YmyJ4Cx8ely4' => 
+    'generated::FRfleZ0Exd0ukMnl' => 
     array (
       'methods' => 
       array (
@@ -2179,7 +2365,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::q9I0YmyJ4Cx8ely4',
+        'as' => 'generated::FRfleZ0Exd0ukMnl',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2195,7 +2381,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::O6gxA6A4S7MAM8vV' => 
+    'generated::zEXMTw8hvwl7QIQj' => 
     array (
       'methods' => 
       array (
@@ -2217,7 +2403,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::O6gxA6A4S7MAM8vV',
+        'as' => 'generated::zEXMTw8hvwl7QIQj',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2307,7 +2493,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::WdwitXiQ3axQPjC4' => 
+    'generated::ckfxJBFobHug6opE' => 
     array (
       'methods' => 
       array (
@@ -2327,7 +2513,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::WdwitXiQ3axQPjC4',
+        'as' => 'generated::ckfxJBFobHug6opE',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2416,7 +2602,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::qrNLexGg4wfRWB9w' => 
+    'generated::szdv0E90F2BKwrLz' => 
     array (
       'methods' => 
       array (
@@ -2436,7 +2622,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::qrNLexGg4wfRWB9w',
+        'as' => 'generated::szdv0E90F2BKwrLz',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2635,7 +2821,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::KmxVyb3BaADsYF6V' => 
+    'generated::JshImhx3YmZhjG0J' => 
     array (
       'methods' => 
       array (
@@ -2655,7 +2841,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::KmxVyb3BaADsYF6V',
+        'as' => 'generated::JshImhx3YmZhjG0J',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3840,7 +4026,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::QYSo28TOFV5BlrMT' => 
+    'generated::vKnpYOZ3I3ScO6ZF' => 
     array (
       'methods' => 
       array (
@@ -3861,7 +4047,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::QYSo28TOFV5BlrMT',
+        'as' => 'generated::vKnpYOZ3I3ScO6ZF',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3877,7 +4063,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::u3dOhVe4wVsrkYYI' => 
+    'generated::pHjGA03BmqoN5fSB' => 
     array (
       'methods' => 
       array (
@@ -3898,7 +4084,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::u3dOhVe4wVsrkYYI',
+        'as' => 'generated::pHjGA03BmqoN5fSB',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3914,7 +4100,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::HoS8Wb2l7td10Ecq' => 
+    'generated::jRSwWrd8phbIuFAB' => 
     array (
       'methods' => 
       array (
@@ -3935,7 +4121,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::HoS8Wb2l7td10Ecq',
+        'as' => 'generated::jRSwWrd8phbIuFAB',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4200,6 +4386,345 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'medication.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/medication',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'medication.index',
+        'uses' => 'App\\Http\\Controllers\\MedicationController@index',
+        'controller' => 'App\\Http\\Controllers\\MedicationController@index',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'medication.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/medication/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'medication.create',
+        'uses' => 'App\\Http\\Controllers\\MedicationController@create',
+        'controller' => 'App\\Http\\Controllers\\MedicationController@create',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'medication.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/medication',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'medication.store',
+        'uses' => 'App\\Http\\Controllers\\MedicationController@store',
+        'controller' => 'App\\Http\\Controllers\\MedicationController@store',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'medication.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/medication/{medication}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'medication.show',
+        'uses' => 'App\\Http\\Controllers\\MedicationController@show',
+        'controller' => 'App\\Http\\Controllers\\MedicationController@show',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'medication.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/medication/{medication}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'medication.edit',
+        'uses' => 'App\\Http\\Controllers\\MedicationController@edit',
+        'controller' => 'App\\Http\\Controllers\\MedicationController@edit',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'medication.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'admin/medication/{medication}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'medication.update',
+        'uses' => 'App\\Http\\Controllers\\MedicationController@update',
+        'controller' => 'App\\Http\\Controllers\\MedicationController@update',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'medication.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'admin/medication/{medication}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'medication.destroy',
+        'uses' => 'App\\Http\\Controllers\\MedicationController@destroy',
+        'controller' => 'App\\Http\\Controllers\\MedicationController@destroy',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'medication.editreplicate' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/medication/{medication}/replicate',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\MedicationController@editreplicate',
+        'controller' => 'App\\Http\\Controllers\\MedicationController@editreplicate',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'medication.editreplicate',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'medication.replicate' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+      ),
+      'uri' => 'admin/medication.replicate',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\MedicationController@replicate',
+        'controller' => 'App\\Http\\Controllers\\MedicationController@replicate',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'medication.replicate',
       ),
       'fallback' => false,
       'defaults' => 
