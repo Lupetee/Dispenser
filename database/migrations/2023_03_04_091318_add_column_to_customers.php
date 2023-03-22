@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::table('customers', function (Blueprint $table) {
             //
             $table->string('room_number')->nullable();
-            $table->string('date_of_birth')->nullable();
+            $table->date('date_of_birth')->nullable();
             $table->string('philhealth')->nullable();
             $table->string('sex')->nullable();
             $table->string('marital_status')->nullable();
