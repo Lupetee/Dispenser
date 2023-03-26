@@ -45,6 +45,28 @@
                         </span>
                     @enderror
                 </div>
+                
+                <div class="form-group">
+                    <label for="doctor_name">Doctor's Name</label>
+                    <input type="text" name="doctor_name" class="form-control @error('doctor_name') is-invalid @enderror"
+                        id="doctor_name" placeholder="Name of Doctor" value="{{ old('doctor_name') }}">
+                    @error('doctor_name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="name_of_nurse">Nurse on Duty</label>
+                    <input type="text" name="name_of_nurse" class="form-control @error('name_of_nurse') is-invalid @enderror"
+                        id="name_of_nurse" placeholder="Name of Nurse" value="{{ old('name_of_nurse') }}">
+                    @error('name_of_nurse')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -93,7 +115,7 @@
                 <div class="form-group">
                     <label for="marital_status">Marital Status</label>
                     <input type="text" name="marital_status" class="form-control @error('marital_status') is-invalid @enderror"
-                        id="marital_status" placeholder=" " value="{{ old('marital_status') }}">
+                        id="marital_status" placeholder="Marital Status" value="{{ old('marital_status') }}">
                     @error('marital_status')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

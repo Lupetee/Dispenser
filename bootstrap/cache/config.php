@@ -6,7 +6,7 @@
     'debug' => true,
     'url' => 'http://dispenser.test',
     'asset_url' => NULL,
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Singapore',
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
@@ -177,7 +177,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\laragon\\www\\Dispenser\\storage\\framework/cache/data',
+        'path' => 'C:\\xampp\\htdocs\\Dispenser\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -343,12 +343,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\laragon\\www\\Dispenser\\storage\\app',
+        'root' => 'C:\\xampp\\htdocs\\Dispenser\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\laragon\\www\\Dispenser\\storage\\app/public',
+        'root' => 'C:\\xampp\\htdocs\\Dispenser\\storage\\app/public',
         'url' => 'http://dispenser.test/storage',
         'visibility' => 'public',
       ),
@@ -365,7 +365,7 @@
     ),
     'links' => 
     array (
-      'C:\\laragon\\www\\Dispenser\\public\\storage' => 'C:\\laragon\\www\\Dispenser\\storage\\app/public',
+      'C:\\xampp\\htdocs\\Dispenser\\public\\storage' => 'C:\\xampp\\htdocs\\Dispenser\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -399,13 +399,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\laragon\\www\\Dispenser\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\Dispenser\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\laragon\\www\\Dispenser\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\Dispenser\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -455,7 +455,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'C:\\laragon\\www\\Dispenser\\storage\\logs/laravel.log',
+        'path' => 'C:\\xampp\\htdocs\\Dispenser\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -511,7 +511,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\laragon\\www\\Dispenser\\resources\\views/vendor/mail',
+        0 => 'C:\\xampp\\htdocs\\Dispenser\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -590,7 +590,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\laragon\\www\\Dispenser\\storage\\framework/sessions',
+    'files' => 'C:\\xampp\\htdocs\\Dispenser\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -610,9 +610,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\laragon\\www\\Dispenser\\resources\\views',
+      0 => 'C:\\xampp\\htdocs\\Dispenser\\resources\\views',
     ),
-    'compiled' => 'C:\\laragon\\www\\Dispenser\\storage\\framework\\views',
+    'compiled' => 'C:\\xampp\\htdocs\\Dispenser\\storage\\framework\\views',
   ),
   'debugbar' => 
   array (
@@ -626,7 +626,7 @@
     array (
       'enabled' => true,
       'driver' => 'file',
-      'path' => 'C:\\laragon\\www\\Dispenser\\storage\\debugbar',
+      'path' => 'C:\\xampp\\htdocs\\Dispenser\\storage\\debugbar',
       'connection' => NULL,
       'provider' => '',
       'hostname' => '127.0.0.1',
@@ -731,10 +731,10 @@
     'convert_entities' => true,
     'options' => 
     array (
-      'font_dir' => 'C:\\laragon\\www\\Dispenser\\storage\\fonts',
-      'font_cache' => 'C:\\laragon\\www\\Dispenser\\storage\\fonts',
+      'font_dir' => 'C:\\xampp\\htdocs\\Dispenser\\storage\\fonts',
+      'font_cache' => 'C:\\xampp\\htdocs\\Dispenser\\storage\\fonts',
       'temp_dir' => 'C:\\Users\\ericj\\AppData\\Local\\Temp',
-      'chroot' => 'C:\\laragon\\www\\Dispenser',
+      'chroot' => 'C:\\xampp\\htdocs\\Dispenser',
       'allowed_protocols' => 
       array (
         'file://' => 
@@ -844,7 +844,7 @@
     array (
     ),
     'enable_runnable_solutions' => NULL,
-    'remote_sites_path' => 'C:\\laragon\\www\\Dispenser',
+    'remote_sites_path' => 'C:\\xampp\\htdocs\\Dispenser',
     'local_sites_path' => '',
     'housekeeping_endpoint_prefix' => '_ignition',
     'settings_file_path' => '',

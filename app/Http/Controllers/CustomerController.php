@@ -121,6 +121,8 @@ class CustomerController extends Controller
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'nickname' => $request->nickname,
+            'doctor_name' => $request->doctor_name,
+            'name_of_nurse' => $request->name_of_nurse,
             'marital_status' => $request->marital_status,
             'sex' => $request->sex,
             'philhealth' => $request->philhealth,
