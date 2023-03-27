@@ -20,6 +20,8 @@ class Customer extends Model
         'date_of_birth',
         'philhealth',
         'sex',
+        'height',
+        'weight',
         'marital_status',
         'emergency',
 

@@ -102,9 +102,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="sex">Sex</label>
-                    <input type="text" name="sex" class="form-control @error('sex') is-invalid @enderror"
-                        id="sex" placeholder="Sex" value="{{ old('sex') }}">
+                    <label for="sex" class="form-label">Sex</label>
+                    <select name="sex" class="form-control @error('sex') is-invalid @enderror" aria-label="select example">
+                <option selected disabled>Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Others">Others</option>
+                </select>
                     @error('sex')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -113,9 +117,37 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="height">Height</label>
+                    <input type="text" name="height" class="form-control @error('height') is-invalid @enderror"
+                        id="height" placeholder="Height" value="{{ old('height') }}">
+                    @error('height')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="weight">Weight</label>
+                    <input type="text" name="weight" class="form-control @error('weight') is-invalid @enderror"
+                        id="weight" placeholder="Weight" value="{{ old('weight') }}">
+                    @error('weight')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <label for="marital_status">Marital Status</label>
-                    <input type="text" name="marital_status" class="form-control @error('marital_status') is-invalid @enderror"
-                        id="marital_status" placeholder="Marital Status" value="{{ old('marital_status') }}">
+                    <select name="marital_status" class="form-control @error('marital_status') is-invalid @enderror" aria-label="select example">
+                <option selected disabled>Select</option>
+                <option value="Single">Single</option>
+                <option value="Married">Married</option>
+                <option value="Separated">Separated</option>
+                <option value="Widowed">Widowed</option>
+                <option value="Divorced">Divorced</option>
+                </select>
                     @error('marital_status')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
