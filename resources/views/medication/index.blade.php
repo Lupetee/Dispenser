@@ -36,7 +36,7 @@
                             <th>Requested(Quantity)</th>
                             <th>Dispensed(Quantity)</th>
                         <th>Prepared by (Nurse on Duty)</th>
-                        <th>Checked / Revied by (Pharmacist on Duty)</th>
+                        <th>Checked / Reviewed by (Pharmacist on Duty)</th>
                         <th>Remarks</th>
                         <th>Action</th>
                     </tr>

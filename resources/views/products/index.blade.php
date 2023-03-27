@@ -37,6 +37,7 @@
                         <th>Dosage/Frequency</th>
                         <th>Quantity</th>
                         <th>Price</th>
+                        <th>Medicine Type</th>
                         <th>Status</th>
                         <th>Created At</th>
                         <th>Updated At</th>
@@ -51,6 +52,7 @@
                             <td>{{ $product->dosage }}</td>
                             <td>{{ $product->quantity }}</td>
                             <td>{{ config('settings.currency_symbol') }}{{ $product->price }}</td>
+                            <td>{{ $product->medicine_type }}</td>
                             <td>
                                 <span
                                     class="right badge badge-{{ $product->status ? 'success' : 'danger' }}">{{ $product->status ? 'Active' : 'Out of Stock' }}</span>
