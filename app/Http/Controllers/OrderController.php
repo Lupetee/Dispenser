@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\OrderStoreRequest;
+use App\Models\Customer;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -19,36 +20,80 @@ class OrderController extends Controller
     }
 
     public function index(Request $request)
-    {
-        $orders = new Order();
-        if ($request->start_date) {
-            $orders = $orders->where('created_at', '>=', $request->start_date);
-        }
-        if ($request->end_date) {
-            $orders = $orders->where('created_at', '<=', $request->end_date . ' 23:59:59');
-        }
-        $station = $request->query('station') ?? 1;
+{
+    $orders = new Order();
+    // $customers = new Customer();
 
-
-        $orders = $orders->where('station_id', '=', $station)
-            ->with(['items', 'payments', 'customer'])
-            ->latest()
-            ->paginate(10);
-
-        $total = $orders->map(function ($i) {
-            return $i->total();
-        })->sum();
-        $receivedAmount = $orders->map(function ($i) {
-            return $i->receivedAmount();
-        })->sum();
-
-        return view('orders.index', compact([
-            'orders',
-            'total',
-            'receivedAmount',
-            'station',
-        ]));
+    // Add a search parameter
+    if ($request->search) {
+        $orders = $orders->where('customer_id', 'like', '%' . $request->search . '%');
+        // $customers= $customers->Where('first_name', 'like', '%' . $request->search . '%');
     }
+
+    if ($request->start_date) {
+        $orders = $orders->where('created_at', '>=', $request->start_date);
+    }
+
+    if ($request->end_date) {
+        $orders = $orders->where('created_at', '<=', $request->end_date . ' 23:59:59');
+    }
+
+    $station = $request->query('station') ?? 1;
+
+    $orders = $orders->where('station_id', '=', $station)
+        ->with(['items', 'payments', 'customer'])
+        ->latest()
+        ->paginate(10);
+
+    $total = $orders->map(function ($i) {
+        return $i->total();
+    })->sum();
+
+    $receivedAmount = $orders->map(function ($i) {
+        return $i->receivedAmount();
+    })->sum();
+
+    return view('orders.index', compact([
+        'orders',
+        'total',
+        'receivedAmount',
+        'station',
+    ]));
+}
+
+    // public function index(Request $request)
+    // {
+       
+
+    //     $orders = new Order();
+    //     if ($request->start_date) {
+    //         $orders = $orders->where('created_at', '>=', $request->start_date);
+    //     }
+    //     if ($request->end_date) {
+    //         $orders = $orders->where('created_at', '<=', $request->end_date . ' 23:59:59');
+    //     }
+    //     $station = $request->query('station') ?? 1;
+
+      
+    //     $orders = $orders->where('station_id', '=', $station)
+    //         ->with(['items', 'payments', 'customer'])
+    //         ->latest()
+    //         ->paginate(10);
+
+    //     $total = $orders->map(function ($i) {
+    //         return $i->total();
+    //     })->sum();
+    //     $receivedAmount = $orders->map(function ($i) {
+    //         return $i->receivedAmount();
+    //     })->sum();
+
+    //     return view('orders.index', compact([
+    //         'orders',
+    //         'total',
+    //         'receivedAmount',
+    //         'station',
+    //     ]));
+    // }
 
     public function store(OrderStoreRequest $request)
     {

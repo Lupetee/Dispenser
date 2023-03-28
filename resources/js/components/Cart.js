@@ -472,8 +472,9 @@ class Cart extends Component {
                                 
                                 html: `
                                 <ul class="list-group">
+                                <li class="list-group-item text-left">Generic Name: ${p.description}</li>
                                     <li class="list-group-item text-left">Brand Name: ${p.name}</li>
-                                    <li class="list-group-item text-left">Generic Name: ${p.description}</li>
+                                    
                                     <li class="list-group-item text-left">Dosage: ${p.dosage}</li>
                                     <li class="list-group-item text-left">Price: ${p.price}</li>
                                 </u>`,

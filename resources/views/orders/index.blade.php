@@ -16,6 +16,19 @@
                 New order added. Click here to
                 <a class="text-primary" href="javascript:window.location.href=window.location.href">reload </a>
             </div>
+
+            {{-- <div class="container-fluid m-0 p-0">
+                <form action="{{ route('orders.index') }}" method="GET">
+                    <div class="d-flex w-100">
+                        <input value="{{ $query }}" class="form-control w-100" name="query" type="search" placeholder="Search" aria-label="Search">
+        
+                        <input class="btn btn-outline-success" type="submit"Search/>
+                    </div>
+                </form>
+            </div> --}}
+
+            
+
             <div class="row">
                 <!-- <div class="col-md-3"></div> -->
                 <div class="col-md-12">
@@ -37,7 +50,11 @@
                 </div>
             </div>
             <hr>
-
+            {{-- <form action="{{ route('orders.index') }}" method="GET">
+                <input type="text" name="search" placeholder="Search by order number">
+                <button type="submit">Search</button>
+            </form> --}}
+            
             @if (auth()->user()->roles == 'pharmacy')
             @endif
 
@@ -66,6 +83,17 @@
                 </form>
             </div>
 
+            <div class="container-fluid m-0 p-0">
+                <form action="{{ route('orders.index') }}" method="GET">
+                    <div class="d-flex w-100">
+                        <input class="form-control w-100" name="search" type="search" placeholder="Search ID" aria-label="Search">
+        
+                        <input class="btn btn-outline-success" type="submit"Search/>
+                    </div>
+                </form>
+            </div>
+
+
 
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">
@@ -93,7 +121,7 @@
                 <tbody>
                     @foreach ($orders as $order)
                         <tr>
-                            <td>{{ $order->id }}</td>
+                            <td>{{ $order->customer_id }}</td>
                             <td>
                                 @if ($order->customer)
                                     <a target="_blank" href="{{ route('order.viewReceipt', $order->id) }}">

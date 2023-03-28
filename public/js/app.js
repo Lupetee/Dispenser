@@ -20292,7 +20292,7 @@ var Cart = /*#__PURE__*/function (_Component) {
               return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
                 onClick: function onClick() {
                   return sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
-                    html: "\n                                <ul class=\"list-group\">\n                                    <li class=\"list-group-item text-left\">Brand Name: ".concat(p.name, "</li>\n                                    <li class=\"list-group-item text-left\">Generic Name: ").concat(p.description, "</li>\n                                    <li class=\"list-group-item text-left\">Dosage: ").concat(p.dosage, "</li>\n                                    <li class=\"list-group-item text-left\">Price: ").concat(p.price, "</li>\n                                </u>"),
+                    html: "\n                                <ul class=\"list-group\">\n                                <li class=\"list-group-item text-left\">Generic Name: ".concat(p.description, "</li>\n                                    <li class=\"list-group-item text-left\">Brand Name: ").concat(p.name, "</li>\n                                    \n                                    <li class=\"list-group-item text-left\">Dosage: ").concat(p.dosage, "</li>\n                                    <li class=\"list-group-item text-left\">Price: ").concat(p.price, "</li>\n                                </u>"),
                     showDenyButton: true,
                     showCancelButton: true,
                     confirmButtonText: 'Add',
