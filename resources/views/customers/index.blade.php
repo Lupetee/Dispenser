@@ -9,6 +9,9 @@
     @if (Auth::user()->roles == 'admin')
         <a href="{{ route('customers.create') }}" class="btn btn-success"><i class="fas fa-plus"></i> Add New Patient</a>
     @endif
+    @if (Auth::user()->roles == 'doctor')
+        <a href="{{ route('customers.create') }}" class="btn btn-success"><i class="fas fa-plus"></i> Add New Patient</a>
+    @endif
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('plugins/sweetalert2/sweetalert2.min.css') }}">
@@ -41,14 +44,26 @@
                     @foreach ($customers as $customer)
                         <tr>
                             <td>{{ $customer->id }}</td>
-                            <td><a href="{{ route('customers.edit', $customer) }}">{{ $customer->first_name }} {{ $customer->last_name }}</a></td>
+                            <td><a href="{{ route('customers.editmedication', $customer) }}">{{ $customer->first_name }} {{ $customer->last_name }}</a></td>
                             <td>{{ $customer->room_number }}</td>
                             <td>{{ $customer->created_at }}</td>
+                            @if (Auth::user()->roles == 'doctor')
                             <td>
+                            
+                            <button class="btn btn-danger btn-delete"
+                            data-url="{{ route('customers.destroy', $customer) }}"><i
+                                class="fas fa-trash"></i></button>
+                             @endif
+                            </td>
+                            @if (Auth::user()->roles != 'doctor')
+                            <td>
+                                <a href="{{ route('customers.edit', $customer) }}" class="btn btn-primary"><i
+                                    class="fas fa-edit"></i></a>
                                 <button class="btn btn-danger btn-delete"
                                     data-url="{{ route('customers.destroy', $customer) }}"><i
                                         class="fas fa-trash"></i></button>
                             </td>
+                            @endif
                         </tr>
                     @endforeach
                 </tbody>

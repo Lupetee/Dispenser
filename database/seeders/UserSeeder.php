@@ -41,7 +41,7 @@ class UserSeeder extends Seeder
             'last_name' => ' ',
             'email'=>'doctor@mail.com',
             'password' => bcrypt('password'),
-            'roles' => 'nurse'
+            'roles' => 'doctor'
         ]);
 
         User::updateOrCreate([

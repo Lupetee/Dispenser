@@ -227,6 +227,8 @@ class CustomerController extends Controller
         $customer->marital_status = $request->marital_status;
         $customer->room_number = $request->room_number;
         $customer->email = $request->email;
+        $customer->height = $request->height;
+        $customer->weight = $request->weight;
         $customer->phone = $request->phone;
         $customer->address = $request->address;
 

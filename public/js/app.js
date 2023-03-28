@@ -20291,7 +20291,18 @@ var Cart = /*#__PURE__*/function (_Component) {
             children: products.map(function (p) {
               return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
                 onClick: function onClick() {
-                  return _this9.addProductToCart(p.barcode);
+                  return sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({
+                    html: "\n                                <ul class=\"list-group\">\n                                    <li class=\"list-group-item text-left\">Brand Name: ".concat(p.name, "</li>\n                                    <li class=\"list-group-item text-left\">Generic Name: ").concat(p.description, "</li>\n                                    <li class=\"list-group-item text-left\">Dosage: ").concat(p.dosage, "</li>\n                                    <li class=\"list-group-item text-left\">Price: ").concat(p.price, "</li>\n                                </u>"),
+                    showDenyButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: 'Add',
+                    denyButtonText: "Close"
+                  }).then(function (result) {
+                    /* Read more about isConfirmed, isDenied below */
+                    if (result.isConfirmed) {
+                      _this9.addProductToCart(p.barcode);
+                    } else if (result.isDenied) {}
+                  });
                 },
                 className: "item",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
