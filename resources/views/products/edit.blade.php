@@ -93,8 +93,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="Medicine type" class="form-label">Medicine Type</label>
-                    <select name="Medicine type" class="form-control @error('Medicine type') is-invalid @enderror" id="Medicine type" aria-label="select example">
+                    <label for="medicine_type" class="form-label">Medicine Type</label>
+                    <select name="medicine_type" class="form-control @error('medicine_type') is-invalid @enderror" id="medicine_type" aria-label="select example">
                     <option selected disabled>Select</option>
                     <option value="Liquid">Liquid</option>
                     <option value="Tablet">Tablet</option>
@@ -104,7 +104,7 @@
                     <option value="Drops">Drops</option>
                     <option value="Suppositories">Suppositories</option>
                     </select>
-                    @error('Medicine type')
+                    @error('medicine_type')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
