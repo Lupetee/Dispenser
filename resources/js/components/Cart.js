@@ -75,6 +75,7 @@ class Cart extends Component {
 
     handleOnChangeBarcode(event) {
         const barcode = event.target.value;
+        console.log(barcode);
         this.setState({ barcode });
     }
     handleOnChangeStation(event) {

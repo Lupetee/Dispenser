@@ -19857,6 +19857,7 @@ var Cart = /*#__PURE__*/function (_Component) {
     key: "handleOnChangeBarcode",
     value: function handleOnChangeBarcode(event) {
       var barcode = event.target.value;
+      console.log(barcode);
       this.setState({
         barcode: barcode
       });
