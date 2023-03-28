@@ -11,6 +11,7 @@ class Product extends Model
         'description',
         'image',
         'barcode',
+        'medicinetype',
         'price',
         'quantity',
         'dosage',

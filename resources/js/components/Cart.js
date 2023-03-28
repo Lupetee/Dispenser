@@ -476,6 +476,7 @@ class Cart extends Component {
                                     class="rounded mx-auto d-block"
                                     alt=""
                                 />
+
                                 <h5
                                     style={
                                         window.APP.warning_quantity > p.quantity

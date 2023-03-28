@@ -39,7 +39,7 @@ class UserSeeder extends Seeder
         ], [
             'first_name' => 'Doctor',
             'last_name' => ' ',
-            'email'=>'nurse@mail.com',
+            'email'=>'doctor@mail.com',
             'password' => bcrypt('password'),
             'roles' => 'nurse'
         ]);

@@ -32,6 +32,8 @@
                     <tr>Email:           </tr><tr>      <h4 id="info" class="mb-2">   {{$customer->email}}</h4></tr>
                     <tr>Date of Birth:   </tr><tr>      <h4 id="info" class="mb-2">   {{$customer->date_of_birth}}</h4></tr>
                     <tr>Sex:              </tr><tr>      <h4 id="info" class="mb-2">  {{$customer->sex}}</h4></tr>
+                    <tr>Height:              </tr><tr>      <h4 id="info" class="mb-2">  {{$customer->height}}</h4></tr>
+                    <tr>Weight:              </tr><tr>      <h4 id="info" class="mb-2">  {{$customer->weight}}</h4></tr>
                     <tr>Marital Status:  </tr><tr>      <h4 id="info" class="mb-2">   {{$customer->marital_status}}</h4></tr>
                     <tr>Philhealth:      </tr><tr>       <h4 id="info" class="mb-2">  {{$customer->philhealth}}</h4></tr>
                     <tr>Contact Number:   </tr><tr>      <h4 id="info" class="mb-2">  {{$customer->phone}}</h4></tr>
@@ -40,6 +42,8 @@
                 
             </tbody>
                 </table>
+
+                
 
                 
     

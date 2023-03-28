@@ -91,6 +91,24 @@
                     @enderror
                 </div>
 
+                <div class="form-group">
+                    <label for="medicinetype" class="form-label">Medicine Type</label>
+                    <select name="medicinetype" class="form-control @error('medicinetype') is-invalid @enderror" id="medicinetype" aria-label="select example">
+                    <option selected disabled>Select</option>
+                    <option value="Liquid">Liquid</option>
+                    <option value="Tablet">Tablet</option>
+                    <option value="Capsules">Capsules</option>
+                    <option value="Inhalers">Inhalers</option>
+                    <option value="Injectibles">Injectibles</option>
+                    <option value="Drops">Drops</option>
+                    <option value="Suppositories">Suppositories</option>
+                    </select>
+                    @error('medicinetype')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
 
                 <div class="form-group">
                     <label for="status">Status</label>
