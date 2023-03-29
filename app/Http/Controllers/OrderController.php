@@ -21,13 +21,16 @@ class OrderController extends Controller
 
     public function index(Request $request)
 {
-    $orders = new Order();
+    
     // $customers = new Customer();
-
+    // if ($request->search) {
+    //     $customers= $customers->Where('first_name', 'like', '%' . $request->search . '%');
+    // }
+    $orders = new Order();
     // Add a search parameter
     if ($request->search) {
         $orders = $orders->where('customer_id', 'like', '%' . $request->search . '%');
-        // $customers= $customers->Where('first_name', 'like', '%' . $request->search . '%');
+    
     }
 
     if ($request->start_date) {

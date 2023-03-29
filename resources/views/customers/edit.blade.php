@@ -200,8 +200,7 @@
                     @enderror
                 </div>
                 
-                <a href="{{ route('customers.edit', $customer) }}" class="btn btn-primary"><i
-                    class="fas fa-edit"></i></a>
+                
         <button class="btn btn-success btn-block btn-lg" type="submit">Save Changes</button>
     </form>
 @endsection
