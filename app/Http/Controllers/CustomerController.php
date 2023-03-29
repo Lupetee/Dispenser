@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CustomerStoreRequest;
 use App\Models\Customer;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -110,8 +111,12 @@ class CustomerController extends Controller
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'nickname' => $request->nickname,
+            'doctor_name' => $request->doctor_name,
+            'name_of_nurse' => $request->name_of_nurse,
             'marital_status' => $request->marital_status,
             'sex' => $request->sex,
+            'height' => $request->height,
+            'weight' => $request->weight,
             'philhealth' => $request->philhealth,
             'date_of_birth' => $request->date_of_birth,
             'emergency' => $request->emergency,
@@ -147,6 +152,8 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
+       
+
         return view('customers.edit', compact('customer'));
     }
 
@@ -209,6 +216,8 @@ class CustomerController extends Controller
         $customer->marital_status = $request->marital_status;
         $customer->room_number = $request->room_number;
         $customer->email = $request->email;
+        $customer->height = $request->height;
+        $customer->weight = $request->weight;
         $customer->phone = $request->phone;
         $customer->address = $request->address;
 

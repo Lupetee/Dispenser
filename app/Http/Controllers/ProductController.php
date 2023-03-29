@@ -32,6 +32,7 @@ class ProductController extends Controller
                     ->orWhere('barcode', 'like', '%' . $queryString . '%')
                     ->orWhere('price', 'like', '%' . $queryString . '%')
                     ->orWhere('status', 'like', '%' . $queryString . '%')
+                    ->orWhere('medicinetype', 'like', '%' . $queryString . '%')
                     ->orWhere('created_at', 'like', '%' . $queryString . '%')
                     ->orWhere('updated_at', 'like', '%' . $queryString . '%')
                     ->orWhere('quantity', 'like', '%' . $queryString . '%');
@@ -77,6 +78,7 @@ class ProductController extends Controller
             'image' => $image_path,
             'barcode' => $request->barcode,
             'price' => $request->price,
+            'medicinetype' => $request->medicinetype,
             'quantity' => $request->quantity,
             'dosage' => $request->dosage,
             'status' => $request->status
@@ -123,6 +125,7 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->barcode = $request->barcode;
         $product->price = $request->price;
+        $product->medicine_type = $request->medicine_type;
         $product->quantity = $request->quantity;
         $product->status = $request->status;
         $product->dosage = $request->dosage;

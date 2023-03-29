@@ -33,10 +33,11 @@
                     <tr>
                         <!-- -->
                         <th>Product Code</th>
-                        <th>Patient Name</th>
+                        <th>Brand Name</th>
                         <th>Dosage/Frequency</th>
                         <th>Quantity</th>
                         <th>Price</th>
+                        <th>Medicine Type</th>
                         <th>Status</th>
                         <th>Created At</th>
                         <th>Updated At</th>
@@ -49,11 +50,15 @@
                             <td>{{ $product->barcode }}</td>
                             <td>{{ $product->name }}</td>
                             <td>{{ $product->dosage }}</td>
-                            <td>{{ $product->quantity }}</td>
+                            <td>{{ $product->quantity }} </td>
                             <td>{{ config('settings.currency_symbol') }}{{ $product->price }}</td>
+                            <td>{{ $product->medicinetype }}</td>
                             <td>
-                                <span
-                                    class="right badge badge-{{ $product->status ? 'success' : 'danger' }}">{{ $product->status ? 'Active' : 'Out of Stock' }}</span>
+                                @if ($product->quantity <= 0)
+                    <span class="right badge badge-danger">Inactive</span>
+                @else
+                    <span class="right badge badge-success">Active</span>
+                @endif
                             </td>
 
                             <td>{{ $product->created_at }}</td>
@@ -83,7 +88,7 @@
                     @endforeach
                 </tbody>
             </table>
-            {{ $products->render() }}
+            
         </div>
     </div><!-- -->
 @endsection

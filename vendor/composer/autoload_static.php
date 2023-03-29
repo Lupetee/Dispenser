@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit48f42c09a5d1e28aca2631f8e4a6b4ad
+class ComposerStaticInita9d1bf2e197c6e01d73b6575d5aead9d
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -594,6 +594,7 @@ class ComposerStaticInit48f42c09a5d1e28aca2631f8e4a6b4ad
         'App\\Http\\Controllers\\CustomerController' => __DIR__ . '/../..' . '/app/Http/Controllers/CustomerController.php',
         'App\\Http\\Controllers\\DoctorOrderSheetController' => __DIR__ . '/../..' . '/app/Http/Controllers/DoctorOrderSheetController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\MedicationController' => __DIR__ . '/../..' . '/app/Http/Controllers/MedicationController.php',
         'App\\Http\\Controllers\\MessageController' => __DIR__ . '/../..' . '/app/Http/Controllers/MessageController.php',
         'App\\Http\\Controllers\\NonRestrictedController' => __DIR__ . '/../..' . '/app/Http/Controllers/NonRestrictedController.php',
         'App\\Http\\Controllers\\OrderController' => __DIR__ . '/../..' . '/app/Http/Controllers/OrderController.php',
@@ -618,12 +619,14 @@ class ComposerStaticInit48f42c09a5d1e28aca2631f8e4a6b4ad
         'App\\Http\\Requests\\ProductStoreRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProductStoreRequest.php',
         'App\\Http\\Requests\\ProductUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProductUpdateRequest.php',
         'App\\Http\\Requests\\StoreDoctorOrderSheetRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreDoctorOrderSheetRequest.php',
+        'App\\Http\\Requests\\StoreMedicationRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreMedicationRequest.php',
         'App\\Http\\Requests\\StoreMessageRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreMessageRequest.php',
         'App\\Http\\Requests\\StoreNonRestrictedRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreNonRestrictedRequest.php',
         'App\\Http\\Requests\\StoreRestrictedRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreRestrictedRequest.php',
         'App\\Http\\Resources\\ProductResource' => __DIR__ . '/../..' . '/app/Http/Resources/ProductResource.php',
         'App\\Models\\Customer' => __DIR__ . '/../..' . '/app/Models/Customer.php',
         'App\\Models\\DoctorOrderSheet' => __DIR__ . '/../..' . '/app/Models/DoctorOrderSheet.php',
+        'App\\Models\\Medication' => __DIR__ . '/../..' . '/app/Models/Medication.php',
         'App\\Models\\Message' => __DIR__ . '/../..' . '/app/Models/Message.php',
         'App\\Models\\NonRestricted' => __DIR__ . '/../..' . '/app/Models/NonRestricted.php',
         'App\\Models\\Order' => __DIR__ . '/../..' . '/app/Models/Order.php',
@@ -6445,10 +6448,10 @@ class ComposerStaticInit48f42c09a5d1e28aca2631f8e4a6b4ad
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit48f42c09a5d1e28aca2631f8e4a6b4ad::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit48f42c09a5d1e28aca2631f8e4a6b4ad::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit48f42c09a5d1e28aca2631f8e4a6b4ad::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit48f42c09a5d1e28aca2631f8e4a6b4ad::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInita9d1bf2e197c6e01d73b6575d5aead9d::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInita9d1bf2e197c6e01d73b6575d5aead9d::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInita9d1bf2e197c6e01d73b6575d5aead9d::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInita9d1bf2e197c6e01d73b6575d5aead9d::$classMap;
 
         }, null, ClassLoader::class);
     }

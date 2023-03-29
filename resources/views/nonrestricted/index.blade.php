@@ -4,7 +4,7 @@
 @section('content-header', 'Non Restricted Medications')
 @section('content-actions')
     @if (Auth::user()->roles == 'nurse')
-        <a href="{{ route('nonrestricted.create') }}" class="btn btn-success"><i class="fas fa-plus"></i> Add Non Restricted Drugs</a>
+        <a href="{{ route('nonrestricted.create') }}" class="btn btn-success"><i class="fas fa-plus"></i> Add Non Restricted</a>
     @endif
     @if (Auth::user()->roles == 'admin')
         <a href="{{ route('nonrestricted.create') }}" class="btn btn-success"><i class="fas fa-plus"></i> Add Non Restricted Drugs</a>

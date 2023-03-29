@@ -13,9 +13,9 @@
                 @method('PUT')
 
                 <div class="form-group">
-                    <label for="name">Name</label>
+                    <label for="name">Brand Name</label>
                     <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
-                        id="name" placeholder="Name" value="{{ old('name', $product->name) }}">
+                        id="name" placeholder="Brand Name" value="{{ old('name', $product->name) }}">
                     @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -25,9 +25,9 @@
 
 
                 <div class="form-group">
-                    <label for="description">Description</label>
+                    <label for="description">Generic Name</label>
                     <textarea name="description" class="form-control @error('description') is-invalid @enderror" id="description"
-                        placeholder="description">{{ old('description', $product->description) }}</textarea>
+                        placeholder="Generic Name">{{ old('description', $product->description) }}</textarea>
                     @error('description')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -92,6 +92,24 @@
                     @enderror
                 </div>
 
+                <div class="form-group">
+                    <label for="Medicine type" class="form-label">Medicine Type</label>
+                    <select name="Medicine type" class="form-control @error('Medicine type') is-invalid @enderror" id="Medicine type" aria-label="select example">
+                    <option selected disabled>Select</option>
+                    <option value="Liquid">Liquid</option>
+                    <option value="Tablet">Tablet</option>
+                    <option value="Capsules">Capsules</option>
+                    <option value="Inhalers">Inhalers</option>
+                    <option value="Injectibles">Injectibles</option>
+                    <option value="Drops">Drops</option>
+                    <option value="Suppositories">Suppositories</option>
+                    </select>
+                    @error('Medicine type')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
 
                 <div class="form-group">
                     <label for="status">Status</label>

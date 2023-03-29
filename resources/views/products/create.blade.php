@@ -12,9 +12,9 @@
                 @csrf
 
                 <div class="form-group">
-                    <label for="name">Name</label>
+                    <label for="name">Brand Name</label>
                     <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
-                        id="name" placeholder="Enter product name" value="{{ old('name') }}">
+                        id="name" placeholder="Enter Brand Name" value="{{ old('name') }}">
                     @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -24,9 +24,9 @@
 
 
                 <div class="form-group">
-                    <label for="description">Description</label>
+                    <label for="description">Generic Name</label>
                     <textarea name="description" class="form-control @error('description') is-invalid @enderror" id="description"
-                        placeholder="Enter short description">{{ old('description') }}</textarea>
+                        placeholder="Enter Generic Name">{{ old('description') }}</textarea>
                     @error('description')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -91,6 +91,24 @@
                     @enderror
                 </div>
 
+                <div class="form-group">
+                    <label for="medicinetype" class="form-label">Medicine Type</label>
+                    <select name="medicinetype" class="form-control @error('medicinetype') is-invalid @enderror" id="medicinetype" aria-label="select example">
+                    <option selected disabled>Select</option>
+                    <option value="Liquid">Liquid</option>
+                    <option value="Tablet">Tablet</option>
+                    <option value="Capsules">Capsules</option>
+                    <option value="Inhalers">Inhalers</option>
+                    <option value="Injectibles">Injectibles</option>
+                    <option value="Drops">Drops</option>
+                    <option value="Suppositories">Suppositories</option>
+                    </select>
+                    @error('medicinetype')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
 
                 <div class="form-group">
                     <label for="status">Status</label>

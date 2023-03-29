@@ -75,6 +75,7 @@ class Cart extends Component {
 
     handleOnChangeBarcode(event) {
         const barcode = event.target.value;
+        console.log(barcode);
         this.setState({ barcode });
     }
     handleOnChangeStation(event) {
@@ -463,18 +464,46 @@ class Cart extends Component {
                             onKeyDown={this.handleSeach}
                         />
                     </div>
+                    
                     <div className="order-product">
                         {products.map((p) => (
                             <div
+                            onClick={() => Swal.fire({
+                                
+                                html: `
+                                <ul class="list-group">
+                                <li class="list-group-item text-left">Generic Name: ${p.description}</li>
+                                    <li class="list-group-item text-left">Brand Name: ${p.name}</li>
+                                    
+                                    <li class="list-group-item text-left">Dosage: ${p.dosage}</li>
+                                    <li class="list-group-item text-left">Price: ${p.price}</li>
+                                </u>`,
+                                showDenyButton: true,
+                                showCancelButton: true,
+                                confirmButtonText: 'Add',
+                                denyButtonText: `Close`,
+                              }).then((result) => {
+                                /* Read more about isConfirmed, isDenied below */
+                                if (result.isConfirmed) {this.addProductToCart(p.barcode)
+                                  
+                                } else if (result.isDenied) {
+                                 
+                                }
+                              })}
+                            key={p.id}
+                            className="item"
+                        >
+                            {/* <div
                                 onClick={() => this.addProductToCart(p.barcode)}
                                 key={p.id}
                                 className="item"
-                            >
+                            > */}
                                 <img
                                     src={p.image_url}
                                     class="rounded mx-auto d-block"
                                     alt=""
                                 />
+
                                 <h5
                                     style={
                                         window.APP.warning_quantity > p.quantity
