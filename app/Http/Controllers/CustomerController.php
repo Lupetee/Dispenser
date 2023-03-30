@@ -203,10 +203,13 @@ class CustomerController extends Controller
         return redirect()->route('customers.medication')->with('success', 'Success, The customer has been updated.');
         }
 
-    public function editmedication(Request $request, Customer $customer)
-    {
-            return view('customers.editmedication', compact('customer'));
-    }
+        public function editmedication(Request $request, Customer $customer)
+        {
+            // dd($customer->id);
+            $orders = Order::where('customer_id', $customer->id)->get();
+            // dd($order);
+                return view('customers.editmedication', compact('customer', 'orders'));
+        }
 
     public function update(Request $request, Customer $customer)
     {

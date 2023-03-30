@@ -18,7 +18,10 @@
         <div class="card">
             
             <div class="card-body">
-                <table class="table table-bordered table-hover">
+                <div class="row">
+                    <div class="col-md-3">
+
+                    <table class="table table-bordered table-hover">
                 <thead class="thead-dark">
 
                 </thead>
@@ -42,7 +45,53 @@
                 
             </tbody>
                 </table>
+</div>
+<div class="col-md-9">
+    <table class="table table-bordered table-hover">
+        <h1>Order History</h1>
+        <thead class="thead-dark">
+            <tr>
+                <th>Order Number</th>
+                
+                <th>Patient</th>
+                
+              
+                <th>Order Completed</th>
+            </tr>
+        </thead>
+        <tbody>
+            @php $counter = 1 @endphp
+            @foreach ($orders as $order)
+                <tr>
+                    <td>{{ $counter++ }}</td>
+                    
+                    <td>
+                        @if ($order->customer)
+                            <a target="_blank" href="{{ route('order.viewReceipt', $order->id) }}">
+                                {{ $order->getCustomerName() }}
+                            </a>
+                        @else
+                            Walk-in Customer
+                        @endif
+                    </td>
+                    
+                    
+                    <td>{{ $order->updated_at }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
 
+         
+                </div>
+<!-- 
+                @foreach ($orders as $order)
+
+                <a target="_blank" href="{{ route('order.viewReceipt', $order->id) }}">
+                                        {{ $order->getCustomerName() }}
+                                    </a>
+                @endforeach -->
                 
 
                 
