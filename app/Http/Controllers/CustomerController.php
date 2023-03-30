@@ -68,7 +68,7 @@ class CustomerController extends Controller
 
 
 
-    public function getDischarged()
+    public function getDischarged(Customer $customer)
     {
 
         if (request()->wantsJson()) {
@@ -77,17 +77,6 @@ class CustomerController extends Controller
             );
         }
         $customers = Customer::where('is_discharged', 1)
-        // ->where(function ($query) use ($request) {
-        //     $query->when(!empty($request->query('query')), function ($query) use ($request) {
-        //         $queryString = $request->query('query');
-
-        //         $query->where('first_name', 'like', '%' . $queryString . '%')
-        //             ->orWhere('id', 'like', '%' . $queryString . '%')
-        //             ->orWhere('last_name', 'like', '%' . $queryString . '%')
-        //             ->orWhere('room_number', 'like', '%' . $queryString . '%')
-        //             ->orWhere('created_at', 'like', '%' . $queryString . '%');
-        //     });
-        // })
         ->latest()->paginate(10);
         return view('medical-history.index')->with([
             'customers' => $customers,
